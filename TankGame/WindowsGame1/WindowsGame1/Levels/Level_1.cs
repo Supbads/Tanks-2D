@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WindowsGame1.Levels
 {
-    public class Level_1 : Level   // TODO:  Level 1 outline
+    public class Level_1 // TODO:  Level 1 outline
     {
-        
-        
+
+
     }
 }

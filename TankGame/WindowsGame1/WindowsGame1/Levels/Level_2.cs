@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WindowsGame1.Levels
 {
-    class Level_2 : Level
+    public class Level_2
     {
     }
 }

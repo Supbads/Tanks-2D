@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1.Levels
 {
-    abstract class Level 
+    abstract public class Level 
     {
         private int currentLevel;
 
