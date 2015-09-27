@@ -9,10 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace WindowsGame1.Levels
+namespace WindowsGame1
 {
     abstract public class Level 
     {
+
         private int currentLevel;
 
         public int CurrentLevel

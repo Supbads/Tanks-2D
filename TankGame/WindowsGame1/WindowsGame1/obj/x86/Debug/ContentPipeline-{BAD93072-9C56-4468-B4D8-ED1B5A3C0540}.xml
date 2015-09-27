@@ -163,6 +163,33 @@
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\RedTankUp.xnb</Output>
       <Time>2015-09-28T02:05:08.0616339+03:00</Time>
     </Item>
+    <Item>
+      <Source>textures\Bricks\120px-Brick_Block.png</Source>
+      <Name>textures\Bricks\120px-Brick_Block</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\120px-Brick_Block.xnb</Output>
+      <Time>2015-09-28T02:22:03.5938429+03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros.png</Source>
+      <Name>textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros.xnb</Output>
+      <Time>2015-09-28T02:22:03.5938429+03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\Bricks\Brick_Block.png</Source>
+      <Name>textures\Bricks\Brick_Block</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\Brick_Block.xnb</Output>
+      <Time>2015-09-28T02:22:03.5838429+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{BAD93072-9C56-4468-B4D8-ED1B5A3C0540}</ContentProjectGUID>
