@@ -1,9 +1,8 @@
 
-####Architecture
-
-
-####[CLASSES]
 ==
+####Architecture
+==
+####[CLASSES]
      --Player.cs
      --Control.cs
      --Animation.cs
