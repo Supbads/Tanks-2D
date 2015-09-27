@@ -75,6 +75,8 @@
     <Compile Include="Animation\Animation.cs" />
     <Compile Include="Control\Control.cs" />
     <Compile Include="Levels\Level.cs" />
+    <Compile Include="Levels\Level_1.cs" />
+    <Compile Include="Levels\Level_2.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
