@@ -32,6 +32,28 @@ namespace WindowsGame1
         //Player Speed
         float playerMoveSpeed;
 
+        // Game World
+        Texture2D spriteTexture;
+        Rectangle spriteRectangle;
+
+        // Screen parameters
+
+        int screenWidth;
+        int screenHeight;
+
+        // The center of the image
+
+        Vector2 spriteOrigin;
+
+        Vector2 spritePosition;
+        float rotation;
+
+        Vector2 spriteVelocity;
+        const float tangentialVelocity = 5f;
+
+        float friction = 0.1f;
+
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -67,10 +89,15 @@ namespace WindowsGame1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
 
+            spriteTexture = Content.Load<Texture2D>("PlayerTank");  // player tank
+            screenWidth = GraphicsDevice.Viewport.Width;   
+            screenHeight = GraphicsDevice.Viewport.Height;
+            spritePosition = new Vector2(200, 200);
+
             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, 
                 GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
 
-            player.Initialize(Content.Load<Texture2D>("player"), playerPosition);  // breaks <
+            //player.Initialize(Content.Load<Texture2D>("player"), playerPosition);  // breaks <
         }
 
         /// <summary>
@@ -138,7 +165,8 @@ namespace WindowsGame1
                 player.position.X -= playerMoveSpeed;
             }
 
-            //if(currentKbState.IsKeyDown(Keys.Right))
+
+            //if (currentKbState.IsKeyDown(Keys.Right))
             //{
             //    player.position.X += playerMoveSpeed;
             //}
@@ -152,6 +180,11 @@ namespace WindowsGame1
             {
                 player.position.Y += playerMoveSpeed;
             }
+            base.Update(gameTime);
+
+            spriteBatch.Begin();
+            // everything you have to update
+            spriteBatch.End();
             player.position.X = MathHelper.Clamp(player.position.X, 0, GraphicsDevice.Viewport.Width - player.Width);
             player.position.Y = MathHelper.Clamp(player.position.Y, 0, GraphicsDevice.Viewport.Height - player.Height);
         }

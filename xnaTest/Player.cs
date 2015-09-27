@@ -15,7 +15,7 @@ namespace WindowsGame1
 
         public bool active;
 
-        public int healt;
+        public int health;
 
         public int Width
         {
@@ -36,7 +36,7 @@ namespace WindowsGame1
 
             active = true;
 
-            healt = 100;
+            health = 100;
         }
 
         public void Update()
