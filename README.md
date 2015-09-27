@@ -12,11 +12,12 @@
      --StartMenu.cs
      --EnemyTanks.cs
      --AIEnemyTanks.cs
-
+     --Backgrounds.cs
 --
 ####[TEXTURES]
 --
-tank.png
+     --tank.png
+
 
 --
 ####[COMMUNICATION BETWEEN CLASSES] // Player -> Control
@@ -26,8 +27,9 @@ tank.png
 --
 ####[FOLDER SRTUCTURE]
 --
-sprites/
-textures/
-animations/
-controls/
-player/
+     --sprites/
+     --textures/
+     --animations/
+     --controls/
+     --player/
+
