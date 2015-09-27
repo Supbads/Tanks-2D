@@ -1,31 +1,31 @@
-???? ????? ?? ?? ??????? ?? ??????.
-#Architecture
-???? ???? ????? ?? ?? ??????????? ?????????..
 
-##[CLASSES]
+####Architecture
+
+
+####[CLASSES]
 ==
-Player.cs
-Control.cs
-Animation.cs
-Sprites.cs
-Level.cs
-Options.cs
-StartMenu.cs
-EnemyTanks.cs
-AIEnemyTanks.cs
+     --Player.cs
+     --Control.cs
+     --Animation.cs
+     --Sprites.cs
+     --Level.cs
+     --Options.cs
+     --StartMenu.cs
+     --EnemyTanks.cs
+     --AIEnemyTanks.cs
 
 --
-##[TEXTURES]
+####[TEXTURES]
 --
 tank.png
 
 --
-##[COMMUNICATION BETWEEN CLASSES] // Player -> Control
+####[COMMUNICATION BETWEEN CLASSES] // Player -> Control
 --
 
 
 --
-##[FOLDER SRTUCTURE]
+####[FOLDER SRTUCTURE]
 --
 sprites/
 textures/
