@@ -1,0 +1,20 @@
+
+TankGame
+|-Animation/	
+|-Animations/Animation.cs	//Master Animation Class Aggregate
+|-Control/
+|-Control/Control.cs
+|-Player/	
+|-Player/Player.cs 		//Player Related Class
+|-Levels/
+|-Levels/Level.cs		//Levels master class
+|-Option/
+|-Option/Option.cs		//Option Master Class 
+|Game.cs			//Master Game File
+
+TankGameContent
+|animations/			//Sprites Draw in frames
+|sprites/			//Sprites with different object if any
+|sounds/			//
+|textures/			//Tetures like wall's player objects etc.
+
