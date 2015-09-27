@@ -69,7 +69,7 @@ namespace WindowsGame1
             this.scale = scale;
             this.looping = looping;
 
-            elapsedTime = 0;
+            elapsedTime = 0;    
             currentFrame = 0;
 
             active = true;
