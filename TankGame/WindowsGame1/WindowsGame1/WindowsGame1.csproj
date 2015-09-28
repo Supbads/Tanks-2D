@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation\Animation.cs" />
+    <Compile Include="CollisionHelper.cs" />
     <Compile Include="Control\Control.cs" />
     <Compile Include="Levels\Level.cs" />
     <Compile Include="Levels\Level_1.cs" />
