@@ -97,7 +97,17 @@ namespace WindowsGame1
         {
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
-            if (currentKbState.IsKeyDown(Keys.Up))
+            if (currentKbState.IsKeyDown(Keys.Left))
+            {
+                position.X -= (int)playerMoveSpeed;
+                setPlayerTank(tankPositions[2]);
+            }
+            else if (currentKbState.IsKeyDown(Keys.Right))
+            {
+                position.X += (int)playerMoveSpeed;
+                setPlayerTank(tankPositions[3]);
+            }
+            else if (currentKbState.IsKeyDown(Keys.Up))
             {
                 position.Y -= (int)playerMoveSpeed;
                 setPlayerTank(tankPositions[0]);
@@ -108,16 +118,7 @@ namespace WindowsGame1
                 position.Y += (int)playerMoveSpeed;
                 setPlayerTank(tankPositions[1]);
             }
-            else if (currentKbState.IsKeyDown(Keys.Left))
-            {
-                position.X -= (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[2]);
-            }
-            else if (currentKbState.IsKeyDown(Keys.Right))
-            {
-                position.X += (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[3]);
-            }
+            
 
             
         }

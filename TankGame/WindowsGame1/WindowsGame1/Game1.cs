@@ -21,7 +21,7 @@ namespace WindowsGame1
                 
         //Player
         Player player;
-        Texture2D[] tankPositions;
+        Texture2D[] tankPositions; //Containing the 4 images for every direction of the tank
         Rectangle playerPosition;
 
         public static int screenWidth;
