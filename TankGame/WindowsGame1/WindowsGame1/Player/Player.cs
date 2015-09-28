@@ -14,18 +14,16 @@ namespace WindowsGame1
 {
     class Player
     {
-        GraphicsDeviceManager _graphics;
-
+        
         //public Texture2D PlayerTexture;
 
-        public Texture2D tank;
-        public Texture2D[] tankPositions;
+        public Animation animation;
 
-        public Rectangle position;
+        public Vector2 position;
 
         public bool active;
 
-        public int health;
+        public int healt;
 
         KeyboardState previousKbState;
         KeyboardState currentKbState;
@@ -35,92 +33,77 @@ namespace WindowsGame1
         public int Width
         {
             //get { return PlayerTexture.Width; }
-            get { return tank.Width; }
+            get { return animation.frameWidth; }
         }
 
         public int Height
         {
             //get { return PlayerTexture.Height; }
-            get { return tank.Height; }
+            get { return animation.frameHeight; }
         }
 
-        public Player(GraphicsDeviceManager graphics, Texture2D[] tankPositions, Rectangle position)
+        public Player(GraphicsDeviceManager graphics)
         {
-            _graphics = graphics;
-            this.tank = tankPositions[0];
+            
+        }
+
+        public void Initialize(Animation _animation, Vector2 position)
+        {
+
+            //PlayerTexture = texture;
+            animation = _animation;
             this.position = position;
-            this.tankPositions = tankPositions;
 
             active = true;
 
-            health = 100;
-            playerMoveSpeed = 3.0f;
+            healt = 100;
+            playerMoveSpeed = 8.0f;
 
             currentKbState = new KeyboardState();
             previousKbState = new KeyboardState();
         }
-        public void setPlayerTank(Texture2D tank){
-            this.tank = tank;
-        }
-
-        //public void Initialize(Texture2D tank, Rectangle position)
-        //{
-        //    this.tank = tank;
-        //    this.position = position;
-
-        //    active = true;
-
-        //    healt = 100;
-        //    playerMoveSpeed = 3.0f;
-
-        //    currentKbState = new KeyboardState();
-        //    previousKbState = new KeyboardState();
-        //}
 
         public void Update(GameTime gameTime)
         {
-            //animation.position = position;
-            //animation.Update(gameTime);
-            PlayerControl();
+            animation.position = position;
+            animation.Update(gameTime);
 
-            position.X = (int)MathHelper.Clamp(position.X, 0, Game1.screenWidth - Width);
-            position.Y = (int)MathHelper.Clamp(position.Y, 0, Game1.screenHeight - Height);
+            PlayerControl();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             //spriteBatch.Draw(PlayerTexture, position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-            spriteBatch.Draw(tank,position, Color.White);
+            animation.Draw(spriteBatch);
         }
 
         private void PlayerControl()
         {
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
+
+
+            if (currentKbState.IsKeyDown(Keys.Right))
+            {
+                position.X += playerMoveSpeed;
+            }
+
             if (currentKbState.IsKeyDown(Keys.Left))
             {
-                position.X -= (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[2]);
-            }
-            else if (currentKbState.IsKeyDown(Keys.Right))
-            {
-                position.X += (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[3]);
-            }
-            else if (currentKbState.IsKeyDown(Keys.Up))
-            {
-                position.Y -= (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[0]);
+                position.X -= playerMoveSpeed;
             }
 
-            else if (currentKbState.IsKeyDown(Keys.Down))
+            if (currentKbState.IsKeyDown(Keys.Up))
             {
-                position.Y += (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[1]);
+                position.Y -= playerMoveSpeed;
             }
-            
 
-            
+            if (currentKbState.IsKeyDown(Keys.Down))
+            {
+                position.Y += playerMoveSpeed;
+            }
+            position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
+            position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
         }
     }
 }
