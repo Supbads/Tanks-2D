@@ -21,9 +21,11 @@ namespace WindowsGame1
                 
         //Player
         Player player;
+        Texture2D[] tankPositions;
+        Rectangle playerPosition;
 
-        public static int ScreenWidth;
-        public static int ScreenHeight;
+        public static int screenWidth;
+        public static int screenHeight;
         
         public Game1()
         {
@@ -40,10 +42,8 @@ namespace WindowsGame1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            ScreenWidth = GraphicsDevice.Viewport.Width;
-            ScreenHeight = GraphicsDevice.Viewport.Height;
             //Init player
-            player = new Player(graphics);        
+            //player.Initialize(playerTank, playerPosition);       
 
             base.Initialize();
         }
@@ -58,18 +58,26 @@ namespace WindowsGame1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
 
-            Animation playerAnimation = new Animation();
+            // OLD CODE -------------------- 
+           /* Animation playerAnimation = new Animation();
             Texture2D playerTexture = Content.Load<Texture2D>("animations/shipAnimation");
-
             playerAnimation.Initialize( playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.White, 1f, true );
-
             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, 
                 GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            player.Initialize(playerAnimation, playerPosition); 
+            -------------------------------------------------------*/
 
-            player.Initialize(playerAnimation, playerPosition);
+            screenWidth = GraphicsDevice.Viewport.Width;
+            screenHeight = GraphicsDevice.Viewport.Height;
 
-            
-            //player.Initialize(Content.Load<Texture2D>("player"), playerPosition);
+            tankPositions = new Texture2D[4];
+            tankPositions[0] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankUp");
+            tankPositions[1] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankDown");
+            tankPositions[2] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankLeft");
+            tankPositions[3] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankRight");
+
+            playerPosition = new Rectangle(300, 700, tankPositions[0].Width, tankPositions[0].Height);
+            player = new Player(graphics, tankPositions, playerPosition);
         }
 
         /// <summary>
@@ -102,6 +110,7 @@ namespace WindowsGame1
             //UpdatePlayer(gameTime);
             //pControl.UpdatePlayer();
             player.Update(gameTime);
+
             base.Update(gameTime);
         }
 
