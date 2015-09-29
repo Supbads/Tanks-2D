@@ -14,6 +14,8 @@ StartMenu.cs
 EnemyTanks.cs
 AIEnemyTanks.cs
 
+AssetManager.cs   --  (assign)Stefan  // Must provide fast texture insertion. Agregate and list them 
+
 --
 ##[TEXTURES]
 --
