@@ -9,9 +9,11 @@ namespace WindowsGame1
 {
     class Sprite : GameObject
     {
-        Texture2D _texture;
-        Rectangle _rectangle;       
-       
+        private Texture2D _texture;
+        private Rectangle _rectangle;
+
+        private bool _active;
+               
         public int X
         {
             get
@@ -40,18 +42,21 @@ namespace WindowsGame1
         {
             _texture = texture;
             _rectangle = new Rectangle((int)position.X, (int)position.Y, _texture.Width, _texture.Height);
+            _active = true;
         }
 
         public Sprite(Texture2D texture, int posX, int posY)
         {
             _texture = texture;
             _rectangle = new Rectangle(posX, posY, _texture.Width, _texture.Height);
+            _active = true;
         }
 
         public Sprite(Texture2D texture, Rectangle rectanngle)
         {
             _texture = texture;
             _rectangle = rectanngle;
+            _active = true;
         }
 
         public override void Update(GameTime gameTime)
@@ -60,7 +65,10 @@ namespace WindowsGame1
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _rectangle, Color.White);            
+            if (_active)
+            {
+                spriteBatch.Draw(_texture, _rectangle, Color.White);
+            }
         }        
     }
 }
