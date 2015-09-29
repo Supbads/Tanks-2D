@@ -59,6 +59,11 @@ namespace WindowsGame1
             currentKbState = new KeyboardState();
             previousKbState = new KeyboardState();
         }
+
+        public Player()
+        {
+            // TODO: Complete member initialization
+        }
         public void setPlayerTank(Texture2D tank)
         {
             this.tank = tank;
