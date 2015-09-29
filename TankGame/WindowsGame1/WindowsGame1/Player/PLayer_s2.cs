@@ -11,16 +11,20 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
-{
+{    
     class Player_s2 : GameObject
     {
-        
-        //public Texture2D PlayerTexture;
 
-        public Animation animation;
+        private Sprite _sprite;
+
+        private Control _control;
+
+        //public Texture2D PlayerTexture;
+                
+        //public Animation animation;
 
         public Vector2 position;
-
+        
         public bool active;
 
         public int healt;
@@ -28,36 +32,17 @@ namespace WindowsGame1
         KeyboardState previousKbState;
         KeyboardState currentKbState;
 
-        float playerMoveSpeed;
+        float playerMoveSpeed;        
 
-        public int Width
-        {
-            //get { return PlayerTexture.Width; }
-            get { return animation.frameWidth; }
-        }
-
-        public int Height
-        {
-            //get { return PlayerTexture.Height; }
-            get { return animation.frameHeight; }
-        }
-
-        public Player(GraphicsDeviceManager graphics)
+        public Player_s2(GraphicsDeviceManager graphics)
         {
             
         }
 
-        public Player()
+        public Player_s2(Sprite sprite)
         {
-
-        }
-
-        public void Initialize(Animation _animation, Vector2 position)
-        {
-
-            //PlayerTexture = texture;
-            animation = _animation;
-            this.position = position;
+            _sprite = sprite;
+            _control = new Control();
 
             active = true;
 
@@ -68,47 +53,41 @@ namespace WindowsGame1
             previousKbState = new KeyboardState();
         }
 
+        public void Initialize()
+        {
+                        
+        }
+
         public override void Update(GameTime gameTime)
         {
-            animation.position = position;
-            animation.Update(gameTime);
-
+            //animation.position = position;
+            //animation.Update(gameTime);          
             PlayerControl();
+            _sprite.X = (int)position.X;
+            _sprite.Y = (int)position.Y;
+        }
+
+        public void Update()
+        {
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             //spriteBatch.Draw(PlayerTexture, position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-            animation.Draw(spriteBatch);
+            //spriteBatch.Draw();
+            //animation.Draw(spriteBatch);
+            _sprite.Draw(spriteBatch);
         }
 
         private void PlayerControl()
         {
-            previousKbState = currentKbState;
-            currentKbState = Keyboard.GetState();
+            position = _control.GetControl(playerMoveSpeed);
+        }
 
-
-            if (currentKbState.IsKeyDown(Keys.Right))
-            {
-                position.X += playerMoveSpeed;
-            }
-
-            if (currentKbState.IsKeyDown(Keys.Left))
-            {
-                position.X -= playerMoveSpeed;
-            }
-
-            if (currentKbState.IsKeyDown(Keys.Up))
-            {
-                position.Y -= playerMoveSpeed;
-            }
-
-            if (currentKbState.IsKeyDown(Keys.Down))
-            {
-                position.Y += playerMoveSpeed;
-            }
-            position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
-            position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
+        private bool Collision()
+        {
+            return false;
         }
     }
 }

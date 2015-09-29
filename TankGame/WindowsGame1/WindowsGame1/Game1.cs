@@ -18,7 +18,9 @@ namespace WindowsGame1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+
+        GameManager gamenManager;
+
         //Player
         Player player;
         Texture2D[] tankPositions; //Containing the 4 images for every direction of the tank
@@ -33,6 +35,9 @@ namespace WindowsGame1
             //graphics.PreferredBackBufferWidth = 1280;
             //graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
+            
+            gamenManager = new GameManager(new GameTime(), Content);
+            
         }
 
         /// <summary>
@@ -46,6 +51,7 @@ namespace WindowsGame1
             // TODO: Add your initialization logic here
             //Init player
             //player.Initialize(playerTank, playerPosition);       
+                       
 
             base.Initialize();
         }
@@ -60,6 +66,8 @@ namespace WindowsGame1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
 
+            gamenManager.LoadContent();
+            
             // OLD CODE -------------------- 
             /* Animation playerAnimation = new Animation();
              Texture2D playerTexture = Content.Load<Texture2D>("animations/shipAnimation");
@@ -103,7 +111,7 @@ namespace WindowsGame1
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            gamenManager.Update();
             //Store Keyboard state
             //previousKbState = currentKbState;
             //currentKbState = Keyboard.GetState();
@@ -112,6 +120,7 @@ namespace WindowsGame1
             //UpdatePlayer(gameTime);
             //pControl.UpdatePlayer();
             player.Update(gameTime);
+
 
             base.Update(gameTime);
         }
@@ -123,11 +132,12 @@ namespace WindowsGame1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
             player.Draw(spriteBatch);
+
+            gamenManager.Draw(spriteBatch);
 
             spriteBatch.End();
 

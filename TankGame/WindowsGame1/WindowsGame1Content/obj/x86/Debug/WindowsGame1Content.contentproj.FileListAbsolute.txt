@@ -1,0 +1,1 @@
+D:\projects\Git\1\trunk\TankGame\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache

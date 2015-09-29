@@ -10,22 +10,8 @@ namespace WindowsGame1
     class Sprite : GameObject
     {
         Texture2D _texture;
-        Rectangle _rectangle;
-        
-        public Vector2 Position 
-        { 
-            get
-            {
-                Vector2 rectPos = new Vector2( (int)_rectangle.X, (int)_rectangle.Y );
-                return rectPos;
-            } 
-            set
-            {
-                _rectangle.X = (int)Position.X;
-                _rectangle.Y = (int)Position.Y;
-            }
-        }
-
+        Rectangle _rectangle;       
+       
         public int X
         {
             get
@@ -70,7 +56,6 @@ namespace WindowsGame1
 
         public override void Update(GameTime gameTime)
         {
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
