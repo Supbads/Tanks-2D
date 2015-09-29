@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Player
+    class Player_S2
     {
         GraphicsDeviceManager _graphics;
 
@@ -44,7 +44,7 @@ namespace WindowsGame1
             get { return tank.Height; }
         }
 
-        public Player(GraphicsDeviceManager graphics, Texture2D[] tankPositions, Rectangle position)
+        public Player_S2(GraphicsDeviceManager graphics, Texture2D[] tankPositions, Rectangle position)
         {
             _graphics = graphics;
             this.tank = tankPositions[0];
