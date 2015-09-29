@@ -29,8 +29,9 @@ namespace WindowsGame1
 
         public Game1()
         {
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics = new GraphicsDeviceManager(this);
+            //graphics.PreferredBackBufferWidth = 1280;
+            //graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
         }
 
