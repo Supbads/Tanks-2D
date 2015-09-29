@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Player_S2
+    class Player_S2 // Player = Player_s2  why new class ?
     {
         GraphicsDeviceManager _graphics;
 

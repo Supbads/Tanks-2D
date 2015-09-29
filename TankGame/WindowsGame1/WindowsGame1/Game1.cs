@@ -18,7 +18,7 @@ namespace WindowsGame1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        
         //Player
         Player player;
         Texture2D[] tankPositions; //Containing the 4 images for every direction of the tank

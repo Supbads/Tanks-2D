@@ -13,7 +13,6 @@ namespace WindowsGame1
 {
     abstract public class Level 
     {
-
         private int currentLevel;
 
         public int CurrentLevel
@@ -31,7 +30,6 @@ namespace WindowsGame1
                 };
             }
         }
-
         public Level(int level)
         {
             this.CurrentLevel = level;

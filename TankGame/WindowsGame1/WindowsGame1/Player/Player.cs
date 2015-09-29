@@ -69,19 +69,19 @@ namespace WindowsGame1
             this.tank = tank;
         }
 
-        //public void Initialize(Texture2D tank, Rectangle position)
-        //{
-        //    this.tank = tank;
-        //    this.position = position;
+        public void Initialize(Texture2D tank, Rectangle position)
+        {
+            this.tank = tank;
+            this.position = position;
 
-        //    active = true;
+            active = true;
 
-        //    healt = 100;
-        //    playerMoveSpeed = 3.0f;
+            health = 100;
+            playerMoveSpeed = 3.0f;
 
-        //    currentKbState = new KeyboardState();
-        //    previousKbState = new KeyboardState();
-        //}
+            currentKbState = new KeyboardState();
+            previousKbState = new KeyboardState();
+        }
 
         public void Update(GameTime gameTime)
         {
@@ -99,7 +99,7 @@ namespace WindowsGame1
             spriteBatch.Draw(tank, position, Color.White);
         }
 
-        private void PlayerControl()
+        public void PlayerControl()
         {
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
@@ -124,9 +124,6 @@ namespace WindowsGame1
                 position.Y += (int)playerMoveSpeed;
                 setPlayerTank(tankPositions[1]);
             }
-
-
-
         }
     }
 }
