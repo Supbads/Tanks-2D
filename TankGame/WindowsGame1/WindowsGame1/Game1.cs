@@ -32,8 +32,9 @@ namespace WindowsGame1
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            //graphics.PreferredBackBufferWidth = 1280;
-            //graphics.PreferredBackBufferHeight = 720;
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
             
             gamenManager = new GameManager(new GameTime(), Content);
@@ -50,8 +51,7 @@ namespace WindowsGame1
         {
             // TODO: Add your initialization logic here
             //Init player
-            //player.Initialize(playerTank, playerPosition);       
-                       
+            //player.Initialize(playerTank, playerPosition);
 
             base.Initialize();
         }

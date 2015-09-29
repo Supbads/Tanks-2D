@@ -36,7 +36,7 @@ namespace WindowsGame1
             {
                 _rectangle.Y = value;
             }
-        }
+        }       
 
         public Sprite(Texture2D texture, Vector2 position)
         {
@@ -59,7 +59,7 @@ namespace WindowsGame1
             _active = true;
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
         }
 
@@ -71,9 +71,14 @@ namespace WindowsGame1
             }
         }
 
-        private override bool Collision()
+        public override bool Collision(List<GameObject> gameObjects)
         {
             return false;
+        }
+
+        public override Rectangle GetRect()
+        {
+            return _rectangle;
         }
     }
 }

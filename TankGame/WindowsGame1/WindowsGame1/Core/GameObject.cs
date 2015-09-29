@@ -10,11 +10,13 @@ namespace WindowsGame1
     //To be inherited From sprites, Player, etc everithing is game object.
     abstract class GameObject
     {
-        public abstract void Update(GameTime gameTime);
+        public abstract Rectangle GetRect();
+
+        public abstract void Update(GameTime gameTime, List<GameObject> gameObjects);
 
         public abstract void Draw(SpriteBatch spriteBatch);
 
-        public abstract bool Collision();
+        public abstract bool Collision(List<GameObject> gameObjects);
 
     }
 }

@@ -35,7 +35,7 @@ namespace WindowsGame1
         {
             foreach (GameObject obj in _gameObjects)
             {                   
-                obj.Update(_gameTime);
+                obj.Update(_gameTime, _gameObjects);
             }
         }
 
@@ -57,10 +57,8 @@ namespace WindowsGame1
             }
             else
             {
-
                 Texture2D tankche = _content.Load<Texture2D>("sprites/BlueTank/BlueTankUp");
                 Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
-
 
                 //Sprite tuhla = new Sprite(tankche, new Vector2(100, 100));
                 Sprite tank_v2 = new Sprite(tankche, new Vector2(300, 20));
@@ -72,7 +70,6 @@ namespace WindowsGame1
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 300, 50, 50)));
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(150, 300, 50, 50)));
             }
-        }
-                
+        }                
     }
 }

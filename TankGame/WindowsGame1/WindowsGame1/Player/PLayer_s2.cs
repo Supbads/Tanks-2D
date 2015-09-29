@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
-{    
+{
     class Player_s2 : GameObject
     {
 
@@ -19,18 +19,18 @@ namespace WindowsGame1
 
         private Control _control;
 
-        //public Texture2D PlayerTexture;
-                
-        //public Animation animation;
+        private bool _collide;
 
-        public Vector2 position;
-        
+        private List<GameObject> _gameObjects;
+
+        private Vector2 _position;
+
         public bool active;
 
-        public int healt;
-       
-        float playerMoveSpeed;        
-              
+        public int health;
+
+        float playerMoveSpeed;
+
         public Player_s2(Sprite sprite)
         {
             _sprite = sprite;
@@ -38,41 +38,56 @@ namespace WindowsGame1
 
             active = true;
 
-            healt = 100;
+            health = 100;
             playerMoveSpeed = 8.0f;
-
-            
         }
 
         public void Initialize()
         {
-                        
+
         }
 
-        public override void Update(GameTime gameTime)
-        {        
-            PlayerControl();
-            _sprite.X = (int)position.X;
-            _sprite.Y = (int)position.Y;
-        }
-
-        public void Update()
+        public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
+            Vector2 prevPosition = new Vector2();
+            prevPosition = _position;
+            
+            PlayerControl();            
+            _collide = Collision(gameObjects);
 
+            if (_collide)
+            {
+                _position = prevPosition;
+            }
+            
+            _sprite.X = (int)_position.X;
+            _sprite.Y = (int)_position.Y;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
-        {            
+        {
             _sprite.Draw(spriteBatch);
         }
 
         private void PlayerControl()
         {
-            position = _control.GetControl(playerMoveSpeed);
+            _position = _control.GetControl(playerMoveSpeed);
         }
 
-        private override bool Collision()
+        public override Rectangle GetRect()
         {
+            return _sprite.GetRect();
+        }
+
+        public override bool Collision(List<GameObject> gameObjects)
+        {
+            foreach (GameObject obj in gameObjects)
+            {
+                if (_sprite.GetRect().Intersects(obj.GetRect()))
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }
