@@ -12,7 +12,7 @@ namespace WindowsGame1
 
         AssetManager _assetManager;
 
-        public ObjectManager()
+        public ObjectManager(AssetManager assetManage)
         {
 
         }
