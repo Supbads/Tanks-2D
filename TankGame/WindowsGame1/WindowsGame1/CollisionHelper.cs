@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class CollisionHelper
+    static class CollisionHelper
     {
         const int penetrationMargin = 3; // 3 pixels
         public static bool Touches(this Rectangle r1, Rectangle r2)
