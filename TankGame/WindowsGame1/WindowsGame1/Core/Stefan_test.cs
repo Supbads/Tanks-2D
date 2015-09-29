@@ -23,13 +23,22 @@
 
 //            Sprite sprTuhla = new Sprite(tuhla, new Rectangle(200, 200, 50, 50));
 
+<<<<<<< .mine
+            //stefan = new Player_S2();
+=======
 //            stefan = new Player();
+>>>>>>> .r48
 
 //            gameObjects = new List<GameObject>();
 
+<<<<<<< .mine
+            gameObjects.Add(sprTuhla);           
+        }
+=======
 //            gameObjects.Add(sprTuhla);
 //            gameObjects.Add(stefan);
 //        }
+>>>>>>> .r48
 
 
 
