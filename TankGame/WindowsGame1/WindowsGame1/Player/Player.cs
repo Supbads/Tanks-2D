@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Player
+    class Player : GameObject
     {
         
         //public Texture2D PlayerTexture;
@@ -47,6 +47,11 @@ namespace WindowsGame1
             
         }
 
+        public Player()
+        {
+
+        }
+
         public void Initialize(Animation _animation, Vector2 position)
         {
 
@@ -63,7 +68,7 @@ namespace WindowsGame1
             previousKbState = new KeyboardState();
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             animation.position = position;
             animation.Update(gameTime);
@@ -71,7 +76,7 @@ namespace WindowsGame1
             PlayerControl();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             //spriteBatch.Draw(PlayerTexture, position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
             animation.Draw(spriteBatch);

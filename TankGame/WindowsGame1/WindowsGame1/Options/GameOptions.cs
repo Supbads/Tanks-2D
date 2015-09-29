@@ -13,7 +13,6 @@ namespace WindowsGame1
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferWidth = 800;
-            graphics.ApplyChanges();
         }
     }
 }

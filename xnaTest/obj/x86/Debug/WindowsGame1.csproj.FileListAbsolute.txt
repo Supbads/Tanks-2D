@@ -1,0 +1,2 @@
+D:\projects\Git\1\trunk\xnaTest\obj\x86\Debug\WindowsGame1.csprojResolveAssemblyReference.cache
+D:\projects\Git\1\trunk\xnaTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt

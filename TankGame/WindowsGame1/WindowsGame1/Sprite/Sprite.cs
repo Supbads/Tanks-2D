@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame1
 {
-    class Sprite
+    class Sprite : GameObject
     {
         Texture2D _texture;
         Rectangle _rectangle;
@@ -67,8 +67,13 @@ namespace WindowsGame1
             _texture = texture;
             _rectangle = rectanngle;
         }
-        
-        public void Draw(SpriteBatch spriteBatch)
+
+        public override void Update(GameTime gameTime)
+        {
+
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_texture, _rectangle, Color.White);            
         }        

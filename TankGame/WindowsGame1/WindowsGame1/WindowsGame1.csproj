@@ -75,6 +75,10 @@
     <Compile Include="Animation\Animation.cs" />
     <Compile Include="Control\Control.cs" />
     <Compile Include="Core\AssetManager.cs" />
+    <Compile Include="Core\GameManager.cs" />
+    <Compile Include="Core\GameObject.cs" />
+    <Compile Include="Core\ObjectManager.cs" />
+    <Compile Include="Core\Stefan_test.cs" />
     <Compile Include="Levels\Level.cs" />
     <Compile Include="Levels\Level_1.cs" />
     <Compile Include="Levels\Level_2.cs" />
