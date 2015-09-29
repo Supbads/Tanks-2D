@@ -69,6 +69,11 @@ namespace WindowsGame1
             {
                 spriteBatch.Draw(_texture, _rectangle, Color.White);
             }
-        }        
+        }
+
+        private override bool Collision()
+        {
+            return false;
+        }
     }
 }

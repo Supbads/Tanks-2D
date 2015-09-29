@@ -13,5 +13,8 @@ namespace WindowsGame1
         public abstract void Update(GameTime gameTime);
 
         public abstract void Draw(SpriteBatch spriteBatch);
+
+        public abstract bool Collision();
+
     }
 }
