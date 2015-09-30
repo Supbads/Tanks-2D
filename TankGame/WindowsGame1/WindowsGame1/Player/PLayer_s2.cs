@@ -51,7 +51,9 @@ namespace WindowsGame1
         {
             _sprite = sprite;
             _sprite.Id = _id;
-            _control = new Control();
+            _position.X = sprite.X;
+            _position.Y = sprite.Y;
+            _control = new Control(_position);
 
             active = true;
 
@@ -74,7 +76,7 @@ namespace WindowsGame1
 
             if (_collide)
             {
-                _position = _prevPosition;
+                _position = _prevPosition;                
             }
             
             _sprite.X = (int)_position.X;
@@ -102,7 +104,8 @@ namespace WindowsGame1
             foreach (GameObject obj in gameObjects)
             {
                 intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
-                if ( intersect != Rectangle.Empty && _id != obj.Id)
+                //if ( intersect != Rectangle.Empty && _id != obj.Id)
+                if ( _sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
                 {
                     return true;
                 }

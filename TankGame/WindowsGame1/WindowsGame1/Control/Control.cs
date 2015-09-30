@@ -16,11 +16,11 @@ namespace WindowsGame1
         KeyboardState previousKbState;
         KeyboardState currentKbState;
 
-        private Vector2 _position; 
+        private Vector2 _position;
 
-        public Control()
+        public Control(Vector2 position)
         {
-            _position = new Vector2();
+            _position = position;
             previousKbState = new KeyboardState();
             currentKbState = new KeyboardState();
         }

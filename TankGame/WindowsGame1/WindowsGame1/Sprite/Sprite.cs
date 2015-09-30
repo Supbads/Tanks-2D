@@ -12,6 +12,8 @@ namespace WindowsGame1
         private Texture2D _texture;
         private Rectangle _rectangle;
 
+        private Vector2 _position;
+
         private bool _active;
 
         private int _id;
@@ -57,20 +59,25 @@ namespace WindowsGame1
         {
             _texture = texture;
             _rectangle = new Rectangle((int)position.X, (int)position.Y, _texture.Width, _texture.Height);
+            _position = position;
             _active = true;
         }
 
         public Sprite(Texture2D texture, int posX, int posY)
         {
             _texture = texture;
+            _position.X = posX;
+            _position.Y = posY;
             _rectangle = new Rectangle(posX, posY, _texture.Width, _texture.Height);
             _active = true;
         }
 
-        public Sprite(Texture2D texture, Rectangle rectanngle)
+        public Sprite(Texture2D texture, Rectangle rectangle)
         {
             _texture = texture;
-            _rectangle = rectanngle;
+            _rectangle = rectangle;
+            _position.X = rectangle.X;
+            _position.Y = rectangle.Y;
             _active = true;
         }
 
