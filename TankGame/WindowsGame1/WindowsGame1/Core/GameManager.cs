@@ -63,10 +63,10 @@ namespace WindowsGame1
                 //Sprite tuhla = new Sprite(tankche, new Vector2(100, 100));
                 Sprite tank_v2 = new Sprite(tankche, new Vector2(300, 20));
 
-                _gameObjects.Add(new Player_s2(tank_v2));
+                _gameObjects.Add(new Player_s2(tank_v2) { Id = 1 });
                 //_gameObjects.Add(tuhla);
                 //_gameObjects.Add(new Sprite(tuhla_v2, new Vector2(50, 50)));
-                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 50, 50)));
+                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 50, 50)) { Id = 2 });
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 300, 50, 50)));
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(150, 300, 50, 50)));
             }

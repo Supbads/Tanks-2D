@@ -24,22 +24,39 @@ namespace WindowsGame1
         private List<GameObject> _gameObjects;
 
         private Vector2 _position;
+        private Vector2 _prevPosition;
 
         public bool active;
 
-        public int health;
+        private int health;
+
+        private int _id;
 
         float playerMoveSpeed;
+
+        public override int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
 
         public Player_s2(Sprite sprite)
         {
             _sprite = sprite;
+            _sprite.Id = _id;
             _control = new Control();
 
             active = true;
 
             health = 100;
-            playerMoveSpeed = 8.0f;
+            playerMoveSpeed = 4.0f;
         }
 
         public void Initialize()
@@ -49,15 +66,15 @@ namespace WindowsGame1
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-            Vector2 prevPosition = new Vector2();
-            prevPosition = _position;
             
-            PlayerControl();            
+            _prevPosition = _position;
+            _position = _control.GetControl(playerMoveSpeed);
+            //PlayerControl();            
             _collide = Collision(gameObjects);
 
             if (_collide)
             {
-                _position = prevPosition;
+                _position = _prevPosition;
             }
             
             _sprite.X = (int)_position.X;
@@ -81,9 +98,11 @@ namespace WindowsGame1
 
         public override bool Collision(List<GameObject> gameObjects)
         {
+            Rectangle intersect;
             foreach (GameObject obj in gameObjects)
             {
-                if (_sprite.GetRect().Intersects(obj.GetRect()))
+                intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
+                if ( intersect != Rectangle.Empty && _id != obj.Id)
                 {
                     return true;
                 }

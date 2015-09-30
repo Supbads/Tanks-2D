@@ -13,6 +13,8 @@ namespace WindowsGame1
         private Rectangle _rectangle;
 
         private bool _active;
+
+        private int _id;
                
         public int X
         {
@@ -36,7 +38,20 @@ namespace WindowsGame1
             {
                 _rectangle.Y = value;
             }
-        }       
+        }
+
+        public override int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
 
         public Sprite(Texture2D texture, Vector2 position)
         {
