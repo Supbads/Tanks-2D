@@ -69,21 +69,27 @@ namespace WindowsGame1
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-
             _prevPosition = _position;
             _position = _control.GetControl(playerMoveSpeed, _position);
-            //PlayerControl();            
-            _collide = Collision(gameObjects);
+            //PlayerControl();         
+
+            //Move the sprite before check collision
+            _sprite.X = (int)_position.X;
+            _sprite.Y = (int)_position.Y;
+
+            _collide = Collision(gameObjects);            
 
             if (_collide)
             {
                 _position = _prevPosition;
             }
 
-            //_sprite.X = (int)_position.X;
-            _sprite.X = (int)_position.X;
-            _sprite.Y = (int)_position.Y;
-            
+            if (_collide)
+            {
+                //If collide revert previous position
+                _sprite.X = (int)_position.X;
+                _sprite.Y = (int)_position.Y;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

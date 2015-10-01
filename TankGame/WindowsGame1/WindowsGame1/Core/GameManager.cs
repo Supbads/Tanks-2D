@@ -61,15 +61,29 @@ namespace WindowsGame1
                 Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
 
                 //Sprite tuhla = new Sprite(tankche, new Vector2(100, 100));
-                Sprite tank_v2 = new Sprite(tankche, new Vector2(300, 20));
-
+                //Sprite tank_v2 = new Sprite(tankche, new Vector2(300, 20));
+                Sprite tank_v2 = new Sprite(tankche, new Rectangle(300, 0, 40, 40));
                 _gameObjects.Add(new Player_s2(tank_v2) { Id = 1 });
                 //_gameObjects.Add(tuhla);
                 //_gameObjects.Add(new Sprite(tuhla_v2, new Vector2(50, 50)));
-                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 50, 50)) { Id = 2 });
-                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 300, 50, 50)) { Id = 3 });
-                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(150, 300, 50, 50)) { Id = 4 });
+                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 40, 40)) { Id = 2 });
+                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 300, 40, 40)) { Id = 3 });
+                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(150, 300, 40, 40)) { Id = 4 });
             }
-        }                
+        }
+
+        private void LoadLevel()
+        {
+            int[,] levelMask = new int[18, 32];
+            Random random = new Random();
+
+            for(int row = 0; row < levelMask.GetLength(0); row++)
+            {
+                for(int col = 0; col < levelMask.GetLength(1); col++)
+                {
+
+                }
+            }
+        }
     }
 }

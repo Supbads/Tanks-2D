@@ -27,6 +27,7 @@ namespace WindowsGame1
             set
             {
                 _rectangle.X = value;
+                _position.X = value;
             }
         }
 
@@ -39,6 +40,7 @@ namespace WindowsGame1
             set
             {
                 _rectangle.Y = value;
+                _position.Y = value;
             }
         }
                 
