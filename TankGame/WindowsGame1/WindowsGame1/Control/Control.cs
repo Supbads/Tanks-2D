@@ -56,5 +56,66 @@ namespace WindowsGame1
             return _position;            
         }
 
+        public Vector2 GetControl(float playerMoveSpeed, bool collide)
+        {
+
+            previousKbState = currentKbState;
+            currentKbState = Keyboard.GetState();
+
+
+            if (currentKbState.IsKeyDown(Keys.Right) && !collide)
+            {
+                _position.X += playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Left) && !collide)
+            {
+                _position.X -= playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Up) && !collide)
+            {
+                _position.Y -= playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Down) && !collide)
+            {
+                _position.Y += playerMoveSpeed;
+            }
+            //position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
+            //position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
+            return _position;
+        }
+
+        public Vector2 GetControl(float playerMoveSpeed, Vector2 position)
+        {
+            _position = position;
+            previousKbState = currentKbState;
+            currentKbState = Keyboard.GetState();
+
+
+            if (currentKbState.IsKeyDown(Keys.Right))
+            {
+                _position.X += playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Left))
+            {
+                _position.X -= playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Up))
+            {
+                _position.Y -= playerMoveSpeed;
+            }
+
+            if (currentKbState.IsKeyDown(Keys.Down))
+            {
+                _position.Y += playerMoveSpeed;
+            }
+            //position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
+            //position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
+            return _position;
+        }
     }
 }

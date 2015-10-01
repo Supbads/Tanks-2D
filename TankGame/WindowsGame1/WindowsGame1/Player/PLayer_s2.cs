@@ -50,9 +50,10 @@ namespace WindowsGame1
         public Player_s2(Sprite sprite)
         {
             _sprite = sprite;
-            _sprite.Id = _id;
+            _sprite.Id = Id;
             _position.X = sprite.X;
             _position.Y = sprite.Y;
+            _prevPosition = _position;
             _control = new Control(_position);
 
             active = true;
@@ -70,7 +71,7 @@ namespace WindowsGame1
         {
 
             _prevPosition = _position;
-            _position = _control.GetControl(playerMoveSpeed);
+            _position = _control.GetControl(playerMoveSpeed, _position);
             //PlayerControl();            
             _collide = Collision(gameObjects);
 
@@ -79,8 +80,10 @@ namespace WindowsGame1
                 _position = _prevPosition;
             }
 
+            //_sprite.X = (int)_position.X;
             _sprite.X = (int)_position.X;
             _sprite.Y = (int)_position.Y;
+            _sprite.Position = _position;
         }
 
         public override void Draw(SpriteBatch spriteBatch)

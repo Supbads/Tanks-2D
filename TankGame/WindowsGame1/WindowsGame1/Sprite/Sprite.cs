@@ -15,7 +15,7 @@ namespace WindowsGame1
         private Vector2 _position;
 
         private bool _active;
-
+        
         private int _id;
                
         public int X
@@ -41,7 +41,7 @@ namespace WindowsGame1
                 _rectangle.Y = value;
             }
         }
-
+                
         public override int Id
         {
             get
@@ -55,9 +55,13 @@ namespace WindowsGame1
             }
         }
 
+        public Vector2 Position { get { return _position; } set { _position = value;} }
+
         public Sprite(Texture2D texture, Vector2 position)
         {
             _texture = texture;
+            X = (int)position.X;
+            Y = (int)position.Y;
             _rectangle = new Rectangle((int)position.X, (int)position.Y, _texture.Width, _texture.Height);
             _position = position;
             _active = true;
@@ -68,6 +72,8 @@ namespace WindowsGame1
             _texture = texture;
             _position.X = posX;
             _position.Y = posY;
+            X = posX;
+            Y = posY;
             _rectangle = new Rectangle(posX, posY, _texture.Width, _texture.Height);
             _active = true;
         }
@@ -78,6 +84,8 @@ namespace WindowsGame1
             _rectangle = rectangle;
             _position.X = rectangle.X;
             _position.Y = rectangle.Y;
+            X = rectangle.X;
+            Y = rectangle.Y;
             _active = true;
         }
 
