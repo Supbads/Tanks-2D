@@ -83,7 +83,7 @@ namespace WindowsGame1
             //_sprite.X = (int)_position.X;
             _sprite.X = (int)_position.X;
             _sprite.Y = (int)_position.Y;
-            _sprite.Position = _position;
+            
         }
 
         public override void Draw(SpriteBatch spriteBatch)
