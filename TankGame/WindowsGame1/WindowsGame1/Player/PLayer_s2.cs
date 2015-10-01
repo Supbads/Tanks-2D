@@ -68,7 +68,7 @@ namespace WindowsGame1
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-            
+
             _prevPosition = _position;
             _position = _control.GetControl(playerMoveSpeed);
             //PlayerControl();            
@@ -76,9 +76,9 @@ namespace WindowsGame1
 
             if (_collide)
             {
-                _position = _prevPosition;                
+                _position = _prevPosition;
             }
-            
+
             _sprite.X = (int)_position.X;
             _sprite.Y = (int)_position.Y;
         }
@@ -105,7 +105,7 @@ namespace WindowsGame1
             {
                 intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
                 //if ( intersect != Rectangle.Empty && _id != obj.Id)
-                if ( _sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
                 {
                     return true;
                 }
