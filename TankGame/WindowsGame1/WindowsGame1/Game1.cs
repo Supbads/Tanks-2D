@@ -19,12 +19,7 @@ namespace WindowsGame1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        GameManager gamenManager;
-
-        //Player
-        Player player;
-        Texture2D[] tankPositions; //Containing the 4 images for every direction of the tank
-        Rectangle playerPosition;
+        GameManager gamenManager;     
 
         public static int screenWidth;
         public static int screenHeight;
@@ -34,7 +29,9 @@ namespace WindowsGame1
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferWidth = 1280;
+            screenWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
+            screenHeight = 720;
             Content.RootDirectory = "Content";
             
             gamenManager = new GameManager(new GameTime(), Content);
@@ -52,6 +49,7 @@ namespace WindowsGame1
             // TODO: Add your initialization logic here
             //Init player
             //player.Initialize(playerTank, playerPosition);
+            gamenManager.Initialize();
 
             base.Initialize();
         }
@@ -68,26 +66,6 @@ namespace WindowsGame1
 
             gamenManager.LoadContent();
             
-            // OLD CODE -------------------- 
-            /* Animation playerAnimation = new Animation();
-             Texture2D playerTexture = Content.Load<Texture2D>("animations/shipAnimation");
-             playerAnimation.Initialize( playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.White, 1f, true );
-             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, 
-                 GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-             player.Initialize(playerAnimation, playerPosition); 
-             -------------------------------------------------------*/
-
-            screenWidth = GraphicsDevice.Viewport.Width;
-            screenHeight = GraphicsDevice.Viewport.Height;
-
-            tankPositions = new Texture2D[4];
-            tankPositions[0] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankUp");
-            tankPositions[1] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankDown");
-            tankPositions[2] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankLeft");
-            tankPositions[3] = Content.Load<Texture2D>("sprites/BlueTank/BlueTankRight");
-
-            playerPosition = new Rectangle(300, 700, tankPositions[0].Width, tankPositions[0].Height);
-            player = new Player(graphics, tankPositions, playerPosition);
         }
 
         /// <summary>
@@ -107,21 +85,12 @@ namespace WindowsGame1
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                //this.Exit();
 
             // TODO: Add your update logic here
             gamenManager.Update();
-            //Store Keyboard state
-            //previousKbState = currentKbState;
-            //currentKbState = Keyboard.GetState();
-
-            //Update Player
-            //UpdatePlayer(gameTime);
-            //pControl.UpdatePlayer();
-            player.Update(gameTime);
-
-
+            
             base.Update(gameTime);
         }
 
@@ -134,9 +103,7 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-
-            player.Draw(spriteBatch);
-
+                       
             gamenManager.Draw(spriteBatch);
 
             spriteBatch.End();

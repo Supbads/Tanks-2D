@@ -31,29 +31,71 @@ namespace WindowsGame1
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
 
+            if (currentKbState.IsKeyDown(Keys.Right))
+            {
+                _position.X += playerMoveSpeed;
+            }
+            else if (currentKbState.IsKeyDown(Keys.Left))
+            {
+                _position.X -= playerMoveSpeed;
+            }
+            else if (currentKbState.IsKeyDown(Keys.Up))
+            {
+                _position.Y -= playerMoveSpeed;
+            }
+            else if (currentKbState.IsKeyDown(Keys.Down))
+            {
+                _position.Y += playerMoveSpeed;
+            }
+            
+            if(currentKbState.IsKeyDown(Keys.Space))
+            {
+                
+            }
+            
+            //position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
+            //position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
+            return _position;
+        }
+
+        //test method for shooting
+        public Vector2 GetControl(float playerMoveSpeed, List<GameObject> gameObjects)
+        {
+
+            previousKbState = currentKbState;
+            currentKbState = Keyboard.GetState();
 
             if (currentKbState.IsKeyDown(Keys.Right))
             {
                 _position.X += playerMoveSpeed;
             }
-
-            if (currentKbState.IsKeyDown(Keys.Left))
+            else if (currentKbState.IsKeyDown(Keys.Left))
             {
                 _position.X -= playerMoveSpeed;
             }
-
-            if (currentKbState.IsKeyDown(Keys.Up))
+            else if (currentKbState.IsKeyDown(Keys.Up))
             {
                 _position.Y -= playerMoveSpeed;
             }
-
-            if (currentKbState.IsKeyDown(Keys.Down))
+            else if (currentKbState.IsKeyDown(Keys.Down))
             {
                 _position.Y += playerMoveSpeed;
             }
+
+            if (currentKbState.IsKeyDown(Keys.Space))
+            {
+                foreach( GameObject obj in gameObjects )
+                {
+                    if(obj.Id > 1000 && obj.Id < 1100)
+                    {
+
+                    }
+                }
+            }
+
             //position.X = MathHelper.Clamp(position.X, 0, Game1.ScreenWidth - Width);
             //position.Y = MathHelper.Clamp(position.Y, 0, Game1.ScreenHeight - Height);
-            return _position;            
+            return _position;
         }
 
         public Vector2 GetControl(float playerMoveSpeed, bool collide)

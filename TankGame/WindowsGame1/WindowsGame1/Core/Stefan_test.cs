@@ -13,7 +13,7 @@ namespace WindowsGame1
     {
         Texture2D tuhla;
 
-        Player stefan;
+        //Player stefan;
 
         List<GameObject> gameObjects;
 

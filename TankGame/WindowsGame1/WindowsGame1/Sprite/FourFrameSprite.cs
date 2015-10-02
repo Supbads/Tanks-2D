@@ -16,14 +16,13 @@ namespace WindowsGame1
         public int FrameHeight;
         public Vector2 Position;
 
-        public FourFrameSprite(Texture2D texture, Vector2 position, int frameWidth,
+        public FourFrameSprite(Texture2D texture, int frameWidth,
             int frameHeight, Color color)
         {
             this.color = color;
             this.FrameWidth = frameWidth;
             this.FrameHeight = frameHeight;
 
-            Position = position;
             spriteStrip = texture;
         }
 
@@ -34,8 +33,8 @@ namespace WindowsGame1
         public void Update(int frameNum)
         {
             sourceRect = new Rectangle(frameNum * FrameWidth, 0, FrameWidth, FrameHeight);
-            _destinationRect = new Rectangle((int)Position.X - (int)FrameWidth / 2,
-                                            (int)Position.Y - (int)FrameHeight / 2,
+            _destinationRect = new Rectangle((int)Position.X,
+                                            (int)Position.Y,
                                             FrameWidth, FrameHeight);
         }
         public Rectangle GetRect()

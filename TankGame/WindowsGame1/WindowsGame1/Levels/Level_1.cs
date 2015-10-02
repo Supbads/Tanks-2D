@@ -16,7 +16,7 @@ namespace WindowsGame1
     {
         Texture2D tuhla;
 
-        Player test;
+        //Player test;
 
         List<GameObject> gameObjects;
 
@@ -27,7 +27,7 @@ namespace WindowsGame1
             Sprite sprTuhla = new Sprite(tuhla, new Rectangle(200, 200, 50, 50));
             //Sprite sprTuhla = new Sprite(tuhla, new Rectangle(200, 200, 50, 50)); // coppy paste za vsqka
 
-            test = new Player();
+            //test = new Player();
 
             gameObjects = new List<GameObject>();
 

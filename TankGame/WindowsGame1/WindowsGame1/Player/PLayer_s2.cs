@@ -25,7 +25,7 @@ namespace WindowsGame1
 
         private Vector2 _position;
         private Vector2 _prevPosition;
-
+        
         public bool active;
 
         private int health;

@@ -85,6 +85,8 @@
     <Compile Include="Levels\Level_1.cs" />
     <Compile Include="Levels\Level_2.cs" />
     <Compile Include="Options\GameOptions.cs" />
+    <Compile Include="Player\Bullet.cs" />
+    <Compile Include="Player\Enemy.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Player\Player_plam.cs" />
     <Compile Include="Player\PLayer_s2.cs" />
