@@ -12,6 +12,8 @@ namespace WindowsGame1
     {
         public abstract int Id { get; set; }
 
+        //public abstract bool IsActive { get; set; }
+
         public abstract Rectangle GetRect();
 
         public abstract void Update(GameTime gameTime, List<GameObject> gameObjects);
