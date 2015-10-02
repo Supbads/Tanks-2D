@@ -69,6 +69,12 @@ namespace WindowsGame1
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 40, 40)) { Id = 2 });
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 300, 40, 40)) { Id = 3 });
                 _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(150, 300, 40, 40)) { Id = 4 });
+
+                //tank #3
+                Texture2D tank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
+                FourFrameSprite playerSprite = new FourFrameSprite(tank, Vector2.Zero, 40, 40, Color.White);
+                Player_plam player2 = new Player_plam(playerSprite, new Vector2(20, 20), 0);
+                _gameObjects.Add(new Player_plam(playerSprite, new Vector2(20, 20), 0) { Id = 5 });
             }
         }
 
