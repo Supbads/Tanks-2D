@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -32,8 +32,7 @@ namespace WindowsGame1
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
-        {
-
+        {                        
         }
 
         public override void Draw(SpriteBatch spriteBatch)
