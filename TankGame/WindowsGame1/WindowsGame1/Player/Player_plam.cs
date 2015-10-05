@@ -7,11 +7,11 @@ namespace WindowsGame1
 {
     class Player_plam : GameObject
     {
+        private List<GameObject> _gameObjects;
         private FourFrameSprite _sprite;
         private Vector2 _position;
-        private Vector2 _prevPosition;
         private Control_plam _control;
-
+        private Vector2 _prevPosition;
         float playerMoveSpeed;
 
         private int _health;
@@ -24,7 +24,6 @@ namespace WindowsGame1
         {
             get { return _sprite.FrameHeight; }
         }
-
         private int _currentFrame;
 
         private int _id;
@@ -40,14 +39,12 @@ namespace WindowsGame1
                 _id = value;
             }
         }
-        //private List<GameObject> _gameObjects;
 
         public Player_plam(FourFrameSprite sprite, Vector2 position, int currentFrame)
         {
             _sprite = sprite;
             _position = position;
             _prevPosition = position;
-            sprite.Position = position;
             _currentFrame = currentFrame;
             _health = 100;
 
@@ -60,11 +57,10 @@ namespace WindowsGame1
         {
 
         }
-
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
             _prevPosition = _position;
-            _position = _control.GetControl(playerMoveSpeed, _position);
+            _position = _control.GetControl(playerMoveSpeed, _position, _gameObjects);
             _currentFrame = _control.GetFrame();
             _sprite.Position = _position;
             _sprite.Update(_currentFrame);

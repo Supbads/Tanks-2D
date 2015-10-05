@@ -13,7 +13,7 @@ namespace WindowsGame1
         private int _id;
 
         private Sprite _sprite;
-        
+
         private bool _isActive;
 
         private string _direction;
@@ -47,16 +47,16 @@ namespace WindowsGame1
             }
         }
 
-        public Bullet(Sprite sprite,string direction)
+        public Bullet(Sprite sprite, string direction)
         {
             _sprite = sprite;
             _direction = direction;
 
-            if(direction == "D")
+            if (direction == "D")
             {
                 _velocity.Y += 2.5f;
             }
-            else if(direction =="U")
+            else if (direction == "U")
             {
                 _velocity.Y -= 2.5f;
             }
@@ -78,11 +78,11 @@ namespace WindowsGame1
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if(_isActive)
+            if (_isActive)
             {
                 _sprite.Draw(spriteBatch);
             }
-            
+
         }
 
         public override Rectangle GetRect()
