@@ -1,2 +1,3 @@
 D:\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache
 D:\projects\Git\1\trunk\TankGame\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache
+D:\school\Universitet\Domashni\Advanced C# teamwork\Repository\Tanks-2D\TankGame\WindowsGame1\WindowsGame1Content\obj\x86\Debug\WindowsGame1Content.contentprojResolveAssemblyReference.cache

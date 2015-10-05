@@ -19,7 +19,7 @@ namespace WindowsGame1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        GameManager gamenManager;     
+        GameManager gameManager;     
 
         public static int screenWidth;
         public static int screenHeight;
@@ -34,7 +34,7 @@ namespace WindowsGame1
             screenHeight = 720;
             Content.RootDirectory = "Content";
             
-            gamenManager = new GameManager(new GameTime(), Content);
+            gameManager = new GameManager(new GameTime(), Content);
             
         }
 
@@ -49,7 +49,7 @@ namespace WindowsGame1
             // TODO: Add your initialization logic here
             //Init player
             //player.Initialize(playerTank, playerPosition);
-            gamenManager.Initialize();
+            gameManager.Initialize();
 
             base.Initialize();
         }
@@ -64,7 +64,7 @@ namespace WindowsGame1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
 
-            gamenManager.LoadContent();
+            gameManager.LoadContent();
             
         }
 
@@ -89,7 +89,7 @@ namespace WindowsGame1
                 //this.Exit();
 
             // TODO: Add your update logic here
-            gamenManager.Update();
+            gameManager.Update();
             
             base.Update(gameTime);
         }
@@ -104,7 +104,7 @@ namespace WindowsGame1
             // TODO: Add your drawing code here
             spriteBatch.Begin();
                        
-            gamenManager.Draw(spriteBatch);
+            gameManager.Draw(spriteBatch);
 
             spriteBatch.End();
 

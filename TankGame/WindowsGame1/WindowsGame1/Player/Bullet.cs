@@ -13,8 +13,14 @@ namespace WindowsGame1
         private int _id;
 
         private Sprite _sprite;
-
+        
         private bool _isActive;
+
+        private string _direction;
+
+        private Vector2 _velocity;
+
+        private List<GameObject> _gameObjects;
 
         public bool IsActive
         {
@@ -41,14 +47,33 @@ namespace WindowsGame1
             }
         }
 
-        public Bullet(Sprite sprite)
+        public Bullet(Sprite sprite,string direction)
         {
             _sprite = sprite;
+            _direction = direction;
+
+            if(direction == "D")
+            {
+                _velocity.Y += 2.5f;
+            }
+            else if(direction =="U")
+            {
+                _velocity.Y -= 2.5f;
+            }
+            else if (direction == "L")
+            {
+                _velocity.X += 2.5f;
+            }
+            else if (direction == "R")
+            {
+                _velocity.X -= 2.5f;
+            }
+
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-            
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)

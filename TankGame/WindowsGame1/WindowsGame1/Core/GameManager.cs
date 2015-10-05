@@ -28,6 +28,8 @@ namespace WindowsGame1
 
         private ContentManager _content;
 
+        private Texture2D[] _bulletDirections;
+
         int[,] _levelMask = new int[18, 32];
 
         public GameManager(GameTime gameTime, ContentManager content)
@@ -50,12 +52,20 @@ namespace WindowsGame1
             _enemyTexture = new Texture2D[] 
             {
                 _content.Load<Texture2D>("sprites\\GreenTank\\Down"),
-                _content.Load<Texture2D>("sprites\\RedTank\\RedTankDown"),
-                _content.Load<Texture2D>("sprites\\OrangeTank\\OrangeDown"),
-                _content.Load<Texture2D>("sprites\\BlueTank\\BlueTankDown")
+                _content.Load<Texture2D>("sprites\\RedTank\\Down"),
+                _content.Load<Texture2D>("sprites\\OrangeTank\\Down"),
+                _content.Load<Texture2D>("sprites\\BlueTank\\Down")
             };
 
-            _bullet = _content.Load<Texture2D>("textures/Bullet");
+            _bulletDirections = new Texture2D[]
+            {
+                //_bullet = _content.Load<Texture2D>("textures/Bullet/Up");
+                _content.Load<Texture2D>("textures/Bullet/Up"),
+                _content.Load<Texture2D>("textures/Bullet/Down"),
+                _content.Load<Texture2D>("textures/Bullet/Left"),
+                _content.Load<Texture2D>("textures/Bullet/Right"),
+            };
+            _bullet = _content.Load<Texture2D>("textures/Bullet/Up");
         }
 
         public void Update()
@@ -80,12 +90,11 @@ namespace WindowsGame1
         {
 
 
-            if (_currentLevel == 0)
+            if (_currentLevel == 0) // menu
             {
-                Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
-                _gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(50, 300, 50, 50)));
+                
             }
-            else
+            else if (_currentLevel == 1)  //level 1
             {
                 //Texture2D tankche = _content.Load<Texture2D>("sprites/BlueTank/BlueTankUp");
                 Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
@@ -108,13 +117,20 @@ namespace WindowsGame1
                 //Tank enemy
                 Texture2D enemyTank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
                 FourFrameSprite enemySprite = new FourFrameSprite(enemyTank, 40, 40, Color.White);
-                Player_plam enemy = new Player_plam(enemySprite, new Vector2(1240, 0), 0) { };
+                Player_plam enemy = new Player_plam(enemySprite, new Vector2(1240, 0), 0) { }; // should instance Enemy class
 
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15))) { Id = 1000, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15))) { Id = 1001, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15))) { Id = 1002, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15))) { Id = 1003, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)),"D") { Id = 1000, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)),"U") { Id = 1001, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"L") { Id = 1002, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"L") { Id = 1003, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"D") { Id = 1004, IsActive = false });
             }
+            else if (_currentLevel == 2) // level 2
+            {
+
+
+            }
+
         }
 
         private void LoadLevel()
@@ -128,7 +144,7 @@ namespace WindowsGame1
             }
         }
 
-        private void LoadLEvel_1()
+        private void LoadLevel_1()
         {
 
             Texture2D tuhlicka = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
@@ -157,8 +173,7 @@ namespace WindowsGame1
                 _enemyCount++;
 
             }
-
-
+            
 
         }
     }
