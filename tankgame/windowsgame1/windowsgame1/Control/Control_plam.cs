@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Diagnostics;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -14,13 +15,19 @@ namespace WindowsGame1
     {
         KeyboardState previousKbState;
         KeyboardState currentKbState;
-
+        List<GameObject> _gameObjects;
         private Vector2 _position;
+        //Bullet bullet = new Bullet((new Sprite<Texture2D>"textures/Bullet",Rectangle(0,5,15,15)),/* direction*/);
         private int _frame;
         private int _width;
         private int _height;
+        private string _bulletDirection;
 
+        private TimeSpan _timeSpan;
 
+        private Stopwatch _stopWatch;
+
+        public string BulletDirection { get; set; }
         public Control_plam(Vector2 position, int width, int height)
         {
             _position = position;
@@ -29,39 +36,71 @@ namespace WindowsGame1
             currentKbState = new KeyboardState();
             _width = width;
             _height = height;
+
+            _stopWatch = new Stopwatch();
+            _stopWatch.Start();
         }
 
-        public Vector2 GetControl(float playerMoveSpeed, Vector2 position)
+        public Vector2 GetControl(float playerMoveSpeed, Vector2 position, List<GameObject> gameObjects)
         {
             _position = position;
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
 
+            
+
+            Bullet bullet = new Bullet();
+
             if (currentKbState.IsKeyDown(Keys.Right))
             {
                 _position.X += playerMoveSpeed;
                 _frame = 0;
+                _bulletDirection = "R";
             }
 
-            if (currentKbState.IsKeyDown(Keys.Left))
+            else if (currentKbState.IsKeyDown(Keys.Left))
             {
                 _position.X -= playerMoveSpeed;
                 _frame = 1;
+                _bulletDirection = "L";
             }
 
-            if (currentKbState.IsKeyDown(Keys.Up))
+            else if (currentKbState.IsKeyDown(Keys.Up))
             {
                 _position.Y -= playerMoveSpeed;
                 _frame = 3;
+                _bulletDirection = "U";
             }
 
-            if (currentKbState.IsKeyDown(Keys.Down))
+            else if (currentKbState.IsKeyDown(Keys.Down))
             {
                 _position.Y += playerMoveSpeed;
                 _frame = 2;
+                _bulletDirection = "D";
             }
-            //_position.X = (int)MathHelper.Clamp(position.X, 0, Game1.screenWidth - _width);
-            //_position.Y = (int)MathHelper.Clamp(position.Y, 0, Game1.screenHeight - _height);
+
+            if (currentKbState.IsKeyDown(Keys.Space))
+            {
+               
+                
+                _timeSpan = _stopWatch.Elapsed;
+                foreach ( GameObject obj in gameObjects )
+                {
+                    if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.7)
+                    {
+                        bullet = (Bullet)obj;
+                        bullet.Shoot(_bulletDirection, _position);
+                        _stopWatch.Reset();
+                        _stopWatch.Start();  
+                        //Debug.WriteLine("SHOOOOOOOOTTTTTT");
+                        //Debug.WriteLine(_timeSpan.TotalSeconds);
+                        
+                        break;
+                    }
+                }
+            }
+            _position.X = (int)MathHelper.Clamp(_position.X, 0, Game1.screenWidth - _width);
+            _position.Y = (int)MathHelper.Clamp(_position.Y, 0, Game1.screenHeight - _height);
 
             return _position;
         }
@@ -70,5 +109,6 @@ namespace WindowsGame1
         {
             return _frame;
         }
+               
     }
 }
