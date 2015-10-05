@@ -92,7 +92,7 @@ namespace WindowsGame1
 
             if (_currentLevel == 0) // menu
             {
-                
+
             }
             else if (_currentLevel == 1)  //level 1
             {
@@ -119,11 +119,11 @@ namespace WindowsGame1
                 FourFrameSprite enemySprite = new FourFrameSprite(enemyTank, 40, 40, Color.White);
                 Player_plam enemy = new Player_plam(enemySprite, new Vector2(1240, 0), 0) { }; // should instance Enemy class
 
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)),"D") { Id = 1000, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)),"U") { Id = 1001, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"L") { Id = 1002, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"L") { Id = 1003, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)),"D") { Id = 1004, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "D") { Id = 1000, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "U") { Id = 1001, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L") { Id = 1002, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L") { Id = 1003, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "D") { Id = 1004, IsActive = false });
             }
             else if (_currentLevel == 2) // level 2
             {
@@ -158,7 +158,7 @@ namespace WindowsGame1
             Random randomTT = new Random(); // random TankTextures
             int tmpRandom = 0;
             int tmpTexture = 0;
-            
+
 
             Sprite tmpSprite = null;
 
@@ -169,11 +169,11 @@ namespace WindowsGame1
             {
                 _enemyTrackingList.Add(tmpRandom);
                 tmpSprite = new Sprite(_enemyTexture[tmpTexture], new Rectangle((int)_spawnPoints[tmpRandom].X, (int)_spawnPoints[tmpRandom].Y, 40, 40));
-                _gameObjects.Add(new Enemy(tmpSprite, _levelMask) { Id = 100});
+                _gameObjects.Add(new Enemy(tmpSprite, _levelMask) { Id = 100 });
                 _enemyCount++;
 
             }
-            
+
 
         }
     }
