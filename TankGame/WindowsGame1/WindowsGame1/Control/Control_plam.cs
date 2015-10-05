@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -58,55 +57,14 @@ namespace WindowsGame1
                 _position.Y += playerMoveSpeed;
                 _frame = 2;
             }
-                       
+
+            if (previousKbState.IsKeyDown(Keys.Space))
+            {
+
+            }
 
             _position.X = (int)MathHelper.Clamp(_position.X, 0, Game1.screenWidth - _width);
             _position.Y = (int)MathHelper.Clamp(_position.Y, 0, Game1.screenHeight - _height);
-
-            return _position;
-        }
-
-        //Adde another method with gameObject
-        public Vector2 GetControl(float playerMoveSpeed, Vector2 position, List<GameObject> gameObjects)
-        {
-            _position = position;
-            previousKbState = currentKbState;
-            currentKbState = Keyboard.GetState();
-
-            if (currentKbState.IsKeyDown(Keys.Right))
-            {
-                _position.X += playerMoveSpeed;
-                _frame = 0;
-            }
-            else if (currentKbState.IsKeyDown(Keys.Left))
-            {
-                _position.X -= playerMoveSpeed;
-                _frame = 1;
-            }
-            else if (currentKbState.IsKeyDown(Keys.Up))
-            {
-                _position.Y -= playerMoveSpeed;
-                _frame = 3;
-            }
-            else if (currentKbState.IsKeyDown(Keys.Down))
-            {
-                _position.Y += playerMoveSpeed;
-                _frame = 2;
-            }
-
-            if (currentKbState.IsKeyDown(Keys.Space))
-            {
-                foreach(GameObject obj in gameObjects)
-                {
-                    if (obj.Id > 1000 && obj.Id < 1100)
-                    {
-                        //Ne sym siguren za tuk kakvo treb da stane no trqbva da e istrelvane na bullet
-                    }
-                }
-            }
-
-            _position.X = (int)MathHelper.Clamp(position.X, 0, Game1.screenWidth - _width);
-            _position.Y = (int)MathHelper.Clamp(position.Y, 0, Game1.screenHeight - _height);
 
             return _position;
         }
