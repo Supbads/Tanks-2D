@@ -17,6 +17,18 @@ namespace WindowsGame1
         private bool _isActive;
 
         private int _health;
+        
+        public override int Health
+        {
+            get
+            {
+                return _health;
+            }
+            set
+            {
+                _health = value;
+            }
+        }
 
         public override bool IsActive
         {
@@ -74,7 +86,7 @@ namespace WindowsGame1
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
             _prevPosition = _position;
-            _position = _control.GetControl(playerMoveSpeed, _position, _gameObjects);
+            _position = _control.GetControl(playerMoveSpeed, _position, gameObjects);
             _currentFrame = _control.GetFrame();
             _sprite.Position = _position;
             _sprite.Update(_currentFrame);
@@ -97,7 +109,7 @@ namespace WindowsGame1
             {
                 intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
                 //if ( intersect != Rectangle.Empty && _id != obj.Id)
-                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id )
                 {
                     return true;
                 }
@@ -107,6 +119,10 @@ namespace WindowsGame1
         public override void Draw(SpriteBatch spriteBatch)
         {
             _sprite.Draw(spriteBatch);
+        }
+
+        public override void Hit()
+        {
         }
     }
 }

@@ -76,6 +76,15 @@ namespace WindowsGame1
             {
                 obj.Update(_gameTime, _gameObjects);
             }
+
+            for (int i = 0; i < _gameObjects.Count; i++ )
+            {
+                if(_gameObjects[i].Health <= 0)
+                {
+                    _gameObjects.RemoveAt(i--);
+                }
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -119,13 +128,12 @@ namespace WindowsGame1
                 FourFrameSprite enemySprite = new FourFrameSprite(enemyTank, 40, 40, Color.White);
                 Player_plam enemy = new Player_plam(enemySprite, new Vector2(1240, 0), 0) { }; // should instance Enemy class
 
-
-
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "D") { Id = 1000, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "U") { Id = 1001, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L") { Id = 1002, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L") { Id = 1003, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "D") { Id = 1004, IsActive = false });
+                
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "D", _bulletDirections) { Id = 1000, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "U", _bulletDirections) { Id = 1001, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L", _bulletDirections) { Id = 1002, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L", _bulletDirections) { Id = 1003, IsActive = false });
+                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "D", _bulletDirections) { Id = 1004, IsActive = false });
             }
             else if (_currentLevel == 2) // level 2
             {
@@ -160,8 +168,7 @@ namespace WindowsGame1
             Random randomTT = new Random(); // random TankTextures
             int tmpRandom = 0;
             int tmpTexture = 0;
-
-
+            
             Sprite tmpSprite = null;
 
             tmpRandom = randomSP.Next(0, _spawnPoints.Length - 1);
@@ -175,8 +182,8 @@ namespace WindowsGame1
                 _enemyCount++;
 
             }
-
-
         }
+
+       
     }
 }

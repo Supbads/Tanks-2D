@@ -41,6 +41,18 @@ namespace WindowsGame1
         }
 
         private int health;
+                
+        public override int Health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                health = value;
+            }
+        }
 
         private int _id;
 
@@ -132,6 +144,11 @@ namespace WindowsGame1
                 }
             }
             return false;
+        }
+
+        public override void Hit()
+        {
+            health -= 50;
         }
     }
 }

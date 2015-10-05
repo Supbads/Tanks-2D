@@ -14,6 +14,10 @@ namespace WindowsGame1
 
         public abstract bool IsActive { get; set; }
 
+        public abstract int Health { get; set; }
+
+        public abstract void Hit();
+
         public abstract Rectangle GetRect();
 
         public abstract void Update(GameTime gameTime, List<GameObject> gameObjects);

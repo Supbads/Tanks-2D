@@ -17,7 +17,21 @@ namespace WindowsGame1
         private bool _active;
         
         private int _id;
-               
+
+        private int health;
+
+        public override int Health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                health = value;
+            }
+        }
+
         public int X
         {
             get
@@ -79,6 +93,7 @@ namespace WindowsGame1
             _rectangle = new Rectangle((int)position.X, (int)position.Y, _texture.Width, _texture.Height);
             _position = position;
             _active = true;
+            health = 100;
         }
 
         public Sprite(Texture2D texture, int posX, int posY)
@@ -90,6 +105,7 @@ namespace WindowsGame1
             Y = posY;
             _rectangle = new Rectangle(posX, posY, _texture.Width, _texture.Height);
             _active = true;
+            health = 100;
         }
 
         public Sprite(Texture2D texture, Rectangle rectangle)
@@ -101,6 +117,7 @@ namespace WindowsGame1
             X = rectangle.X;
             Y = rectangle.Y;
             _active = true;
+            health = 100;
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
@@ -123,6 +140,11 @@ namespace WindowsGame1
         public override Rectangle GetRect()
         {
             return _rectangle;
+        }
+
+        public override void Hit()
+        {
+            health -= 50;
         }
     }
 }

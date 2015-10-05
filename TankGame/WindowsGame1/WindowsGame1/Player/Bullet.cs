@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace WindowsGame1
 {
@@ -21,6 +22,24 @@ namespace WindowsGame1
         private Vector2 _velocity;
 
         private List<GameObject> _gameObjects;
+
+        private Texture2D[] _textures;
+
+        private bool _collision;
+
+        private int health;
+
+        public override int Health
+        {
+            get
+            {
+                return health;
+            }
+            set
+            {
+                health = value;
+            }
+        }
 
         public override bool IsActive
         {
@@ -47,40 +66,51 @@ namespace WindowsGame1
             }
         }
 
-        public Bullet(Sprite sprite, string direction)
+        public Bullet(Sprite sprite, string direction, Texture2D[] bulletTextures)
         {
             _sprite = sprite;
             _direction = direction;
-                        
-            //if (direction == "D")
-            //{
-            //    _velocity.Y += 2.5f;
-            //}
-            //else if (direction == "U")
-            //{
-            //    _velocity.Y -= 2.5f;
-            //}
-            //else if (direction == "L")
-            //{
-            //    _velocity.X += 2.5f;
-            //}
-            //else if (direction == "R")
-            //{
-            //    _velocity.X -= 2.5f;
-            //}
+            _textures = bulletTextures;
+
+            health = 100;                                   
 
         }
 
         public Bullet()
         {
-
+            health = 100;
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
+            _collision = Collision(gameObjects);
+
             if(_isActive)
             {
                 //dviji se
+                if (_direction == "U")
+                {
+                    _sprite.Y -= 6;
+                }
+                if (_direction == "D")
+                {
+                    _sprite.Y += 6;
+                }
+                if (_direction == "L")
+                {
+                    _sprite.X -= 6;
+                }
+                if (_direction == "R")
+                {
+                    _sprite.X += 6;
+                }
+            }
+
+            if( ((0 > _sprite.X || _sprite.X > Game1.screenWidth) || (_sprite.Y < 0 || _sprite.Y > Game1.screenHeight)) && _isActive)
+            {
+                _isActive = false;
+                _sprite.X = -100;
+                _sprite.Y = -100;    
             }
         }
 
@@ -88,7 +118,7 @@ namespace WindowsGame1
         {
             if (_isActive)
             {
-                _sprite.Draw(spriteBatch);
+                 _sprite.Draw(spriteBatch);
             }
 
         }
@@ -100,14 +130,57 @@ namespace WindowsGame1
 
         public override bool Collision(List<GameObject> gameObjects)
         {
+            Rectangle intersect;
+            foreach (GameObject obj in gameObjects)
+            {
+                intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
+                //if ( intersect != Rectangle.Empty && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
+                {
+                    _isActive = false;
+                    _sprite.X = -100;
+                    _sprite.Y = -100;
+                    obj.Hit();
+                    return true;
+                }
+            }
+
             return false;
         }
 
-        public void Shoot()
+        public void Shoot(string direction, Vector2 position)
         {
             //To DO Logic 
-
             _isActive = true;
+
+            //_sprite.Position = new Vector2(position.X, position.Y);
+
+            //Debug.WriteLine(direction);
+
+            if( direction == "U")
+            {
+                _sprite = new Sprite(_textures[0], new Rectangle((int)position.X + 13, (int)position.Y - 20, 15, 15));
+                _direction = direction;
+            }
+            if (direction == "D")
+            {
+                _sprite = new Sprite(_textures[1], new Rectangle((int)position.X + 13, (int)position.Y + 45, 15, 15));
+                _direction = direction;
+            }
+            if (direction == "L")
+            {
+                _sprite = new Sprite(_textures[2], new Rectangle((int)position.X -20, (int)position.Y + 13, 15, 15));
+                _direction = direction;
+            }
+            if (direction == "R")
+            {
+                _sprite = new Sprite(_textures[3], new Rectangle((int)position.X + 45, (int)position.Y + 13, 15, 15));
+                _direction = direction;
+            }
+        }
+
+        public override void Hit()
+        {
         }
     }
 }
