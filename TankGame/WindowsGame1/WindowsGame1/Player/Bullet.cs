@@ -22,7 +22,7 @@ namespace WindowsGame1
 
         private List<GameObject> _gameObjects;
 
-        public bool IsActive
+        public override bool IsActive
         {
             get
             {
@@ -51,29 +51,37 @@ namespace WindowsGame1
         {
             _sprite = sprite;
             _direction = direction;
+                        
+            //if (direction == "D")
+            //{
+            //    _velocity.Y += 2.5f;
+            //}
+            //else if (direction == "U")
+            //{
+            //    _velocity.Y -= 2.5f;
+            //}
+            //else if (direction == "L")
+            //{
+            //    _velocity.X += 2.5f;
+            //}
+            //else if (direction == "R")
+            //{
+            //    _velocity.X -= 2.5f;
+            //}
 
-            if (direction == "D")
-            {
-                _velocity.Y += 2.5f;
-            }
-            else if (direction == "U")
-            {
-                _velocity.Y -= 2.5f;
-            }
-            else if (direction == "L")
-            {
-                _velocity.X += 2.5f;
-            }
-            else if (direction == "R")
-            {
-                _velocity.X -= 2.5f;
-            }
+        }
+
+        public Bullet()
+        {
 
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-
+            if(_isActive)
+            {
+                //dviji se
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -93,6 +101,13 @@ namespace WindowsGame1
         public override bool Collision(List<GameObject> gameObjects)
         {
             return false;
+        }
+
+        public void Shoot()
+        {
+            //To DO Logic 
+
+            _isActive = true;
         }
     }
 }

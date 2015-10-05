@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Game;
 
 namespace WindowsGame1
 {
@@ -22,6 +23,8 @@ namespace WindowsGame1
         private int _height;
         private string _bulletDirection;
 
+        private int _sec;
+
         public string BulletDirection { get; set; }
         public Control_plam(Vector2 position, int width, int height)
         {
@@ -31,6 +34,7 @@ namespace WindowsGame1
             currentKbState = new KeyboardState();
             _width = width;
             _height = height;
+
         }
 
         public Vector2 GetControl(float playerMoveSpeed, Vector2 position, List<GameObject> gameObjects)
@@ -38,6 +42,8 @@ namespace WindowsGame1
             _position = position;
             previousKbState = currentKbState;
             currentKbState = Keyboard.GetState();
+
+            Bullet bullet = new Bullet();
 
             if (currentKbState.IsKeyDown(Keys.Right))
             {
@@ -83,13 +89,16 @@ namespace WindowsGame1
                 {
                     _bulletDirection = "R";
                 }
-                //foreach (GameObject obj in gameObjects)
-                //{
-                //    if (obj.Id > 1000 && obj.Id < 1100)
-                //    {
 
-                //    }
-                //}
+                foreach ( GameObject obj in gameObjects )
+                {
+                    if ( obj.Id > 1000 && obj.Id < 2000 && obj.IsActive == false)
+                    {
+                        bullet = (Bullet)obj;
+                        bullet.Shoot();
+                        
+                    }
+                }
             }
             _position.X = (int)MathHelper.Clamp(_position.X, 0, Game1.screenWidth - _width);
             _position.Y = (int)MathHelper.Clamp(_position.Y, 0, Game1.screenHeight - _height);

@@ -119,6 +119,8 @@ namespace WindowsGame1
                 FourFrameSprite enemySprite = new FourFrameSprite(enemyTank, 40, 40, Color.White);
                 Player_plam enemy = new Player_plam(enemySprite, new Vector2(1240, 0), 0) { }; // should instance Enemy class
 
+
+
                 _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "D") { Id = 1000, IsActive = false });
                 _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 0, 15, 15)), "U") { Id = 1001, IsActive = false });
                 _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, 100, 15, 15)), "L") { Id = 1002, IsActive = false });

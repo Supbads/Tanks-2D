@@ -14,6 +14,8 @@ namespace WindowsGame1
         //private FourFrameSprite _sprite;
         private Sprite _sprite;
 
+        private bool _active;
+
         public override int Id
         {
             get
@@ -23,6 +25,18 @@ namespace WindowsGame1
             set
             {
                 _id = value;
+            }
+        }
+
+        public override bool IsActive
+        {
+            get
+            {
+                return _active;
+            }
+            set
+            {
+                _active = value;
             }
         }
 

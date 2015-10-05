@@ -28,6 +28,18 @@ namespace WindowsGame1
         
         public bool active;
 
+        public override bool IsActive
+        {
+            get
+            {
+                return active;
+            }
+            set
+            {
+                active = value;
+            }
+        }
+
         private int health;
 
         private int _id;

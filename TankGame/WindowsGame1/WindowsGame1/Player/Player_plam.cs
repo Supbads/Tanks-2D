@@ -14,7 +14,21 @@ namespace WindowsGame1
         private Vector2 _prevPosition;
         float playerMoveSpeed;
 
+        private bool _isActive;
+
         private int _health;
+
+        public override bool IsActive
+        {
+            get
+            {
+                return _isActive;
+            }
+            set
+            {
+                _isActive = value;
+            }
+        }
 
         public int Width
         {

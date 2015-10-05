@@ -15,6 +15,19 @@ namespace WindowsGame1
         public int FrameWidth;
         public int FrameHeight;
         public Vector2 Position;
+        public bool _active;
+
+        public bool IsActive
+        {
+            get
+            {
+                return _active;
+            }
+            set
+            {
+                _active = value;
+            }
+        }
 
         public FourFrameSprite(Texture2D texture, int frameWidth,
             int frameHeight, Color color)
@@ -41,6 +54,7 @@ namespace WindowsGame1
         {
             return _destinationRect;
         }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(spriteStrip, _destinationRect, sourceRect, color);

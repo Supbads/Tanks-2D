@@ -57,6 +57,18 @@ namespace WindowsGame1
             }
         }
 
+        public override bool IsActive
+        {
+            get
+            {
+                return _active;
+            }
+            set
+            {
+                _active = value;
+            }
+        }
+
         public Vector2 Position { get { return _position; } set { _position = value;} }
 
         public Sprite(Texture2D texture, Vector2 position)
