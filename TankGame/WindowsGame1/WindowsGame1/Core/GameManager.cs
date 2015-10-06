@@ -120,41 +120,9 @@ namespace WindowsGame1
 
                 //level (will extract in a method or class)
                 //Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
-                //_level1 = new Level_1(tuhla_v2, _gameObjects);
-
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(0, 0, 40, 40)) { Id = 2 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(40, 40, 40, 40)) { Id = 3 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(40, 80, 40, 40)) { Id = 4 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(40, 120, 40, 40)) { Id = 6 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 40, 40, 40)) { Id = 7 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 80, 40, 40)) { Id = 8 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 120, 40, 40)) { Id = 9 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(160, 40, 40, 40)) { Id = 10 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 40, 40, 40)) { Id = 11 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(240, 40, 40, 40)) { Id = 12 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(40, 240, 40, 40)) { Id = 13 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(160, 240, 40, 40)) { Id = 14 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(0, 240, 40, 40)) { Id = 15 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(160, 280, 40, 40)) { Id = 17 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(0, 160, 40, 40)) { Id = 18 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 240, 40, 40)) { Id = 19 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 280, 40, 40)) { Id = 20 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(160, 320, 40, 40)) { Id = 21 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(200, 360, 40, 40)) { Id = 22 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(120, 440, 40, 40)) { Id = 23 });//
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(80, 400, 40, 40)) { Id = 24 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(40, 360, 40, 40)) { Id = 25 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(0 , 320, 40, 40)) { Id = 25 });
-                //_gameObjects.Add(new Sprite(tuhla_v2, new Rectangle(0, 280, 40, 40)) { Id = 25 });
-
-                GenerateLevel(new int[5 , 10]
-                {
-                    {0,0,0,0,0,0,0,0,0,1},
-                    {0,0,0,0,1,1,1,0,0,1},
-                    {1,0,1,1,1,1,1,0,0,1},
-                    {1,0,0,1,0,1,1,0,0,1},
-                    {1,1,0,1,1,1,1,0,0,1}
-                });
+                _level1 = new Level_1();
+                GenerateLevel(_level1.GetLevel());              
+                
                                 
                 //Tank enemy
                 Texture2D enemyTank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
