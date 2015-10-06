@@ -135,7 +135,7 @@ namespace WindowsGame1
             {
                 intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
                 //if ( intersect != Rectangle.Empty && _id != obj.Id)
-                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id && obj.Id < 7000)//obv.Id < 7000 -> Font
                 {
                     _isActive = false;
                     _sprite.X = -100;
