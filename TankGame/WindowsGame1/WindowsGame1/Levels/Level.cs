@@ -34,5 +34,6 @@ namespace WindowsGame1
         {
             this.CurrentLevel = level;
         }
+               
     }
 }
