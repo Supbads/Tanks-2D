@@ -86,7 +86,7 @@ namespace WindowsGame1
                 _timeSpan = _stopWatch.Elapsed;
                 foreach ( GameObject obj in gameObjects )
                 {
-                    if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.45)
+                    if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.5)
                     {
                         bullet = (Bullet)obj;
                         bullet.Shoot(_bulletDirection, _position);

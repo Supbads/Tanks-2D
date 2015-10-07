@@ -94,7 +94,7 @@ namespace WindowsGame1
 
             foreach (GameObject obj in gameObjects)
             {
-                if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.7)
+                if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.6)
                 {
                     bullet = (Bullet)obj;
                     bullet.Shoot(_bulletDirection, _position);                    

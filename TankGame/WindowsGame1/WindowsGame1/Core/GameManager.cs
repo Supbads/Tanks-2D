@@ -44,6 +44,10 @@ namespace WindowsGame1
         Texture2D[] buttonsTextures = new Texture2D[6];
 
         Menu menu;
+        
+        private int getLevel;
+
+        public int GetLevel { get { return this.getLevel; } }
 
         public GameManager(GameTime gameTime, ContentManager content)
         {
@@ -102,14 +106,11 @@ namespace WindowsGame1
             }
             else if (_currentLevel == 0)
             {
-                if (menu.Update() == 1)
+                getLevel = menu.Update();
+
+                if (getLevel > 0)
                 {
-                    _currentLevel=1;
-                    LoadContent();
-                }
-                else if (menu.Update() == 2)
-                {
-                    _currentLevel = 2;
+                    _currentLevel = getLevel;
                     LoadContent();
                 }
             }

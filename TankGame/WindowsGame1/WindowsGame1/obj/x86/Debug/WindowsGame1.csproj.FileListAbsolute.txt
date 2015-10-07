@@ -81,3 +81,45 @@ D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame
 D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
 D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
 C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\multiplayerButton.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\animations\shipAnimation.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Down.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Left.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Right.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Up.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\120px-Brick_Block.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\Brick_Block.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\BlueTank.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\tankBase_0.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\exit.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\Menu.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\pause.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\resume.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\start.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Down.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Left.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Right.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Up.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Down.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Left.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Right.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Up.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Down.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Left.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Right.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Up.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Down.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Left.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Right.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Up.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Backgrounds\BG1.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\GreenTank.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\OrangeTank.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\RedTank.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\multiplayerButton.xnb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
+C:\Users\USER\Desktop\Нова папка\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb

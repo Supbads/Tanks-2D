@@ -91,7 +91,12 @@ namespace WindowsGame1
 
             // TODO: Add your update logic here
             gameManager.Update();
-            
+
+            if (gameManager.GetLevel == -1)
+            {
+                Exit();
+            }
+
             base.Update(gameTime);
         }
 

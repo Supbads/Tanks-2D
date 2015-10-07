@@ -10,29 +10,31 @@ namespace WindowsGame1
 
         private Texture2D exitButton;
 
-        private Texture2D multiplayerButton;
-
         private Texture2D pauseButton;
 
         private Texture2D resumeButton;
 
         private Texture2D menuBackground;
 
+        private Texture2D playerVsPlayer;
+
         private Rectangle backgroundRectangle;
 
         private Vector2 startButtonPosition = new Vector2(1000, 400);
 
-        private Vector2 exitButtonPosition = new Vector2(1000, 500);
+        private Vector2 exitButtonPosition = new Vector2(1000, 450);
 
         private Vector2 resumeButtonPosition = new Vector2(400, 300);
 
         private Vector2 pauseButtonPosition = new Vector2(750, 0);
 
-        private Vector2 multiplayerButtonPosition = new Vector2(1000, 450);
+        private Vector2 playerVsPlayerPosition = new Vector2(1000, 425);
 
         MouseState mouseState = Mouse.GetState();
 
         MouseState previousMouseState;
+
+        KeyboardState keyboardState = Keyboard.GetState();
 
         private int windowWidht;
         private int windowHeight;
@@ -42,10 +44,10 @@ namespace WindowsGame1
         enum GameState
         {
             StartMenu,
-            Playing,
+            LevelOne,
+            PlayerVsPlayerLevel,
             Paused,
-            Exit,
-            Multiplayer
+            Exit
         }
 
 
@@ -56,7 +58,7 @@ namespace WindowsGame1
             this.pauseButton = buttonTextures[2];
             this.resumeButton = buttonTextures[3];
             this.menuBackground = buttonTextures[4];
-            this.multiplayerButton = buttonTextures[5];
+            this.playerVsPlayer = buttonTextures[5];
 
             this.windowWidht = windowWidth;
             this.windowHeight = windowHeight;
@@ -70,6 +72,8 @@ namespace WindowsGame1
             //wait for mouseclick
             mouseState = Mouse.GetState();
 
+
+
             if (previousMouseState.LeftButton == ButtonState.Pressed &&
                mouseState.LeftButton == ButtonState.Released)
             {
@@ -79,14 +83,22 @@ namespace WindowsGame1
             previousMouseState = mouseState;
 
             int level = 0;
-            if (gameState == GameState.Playing)
+            if (gameState == GameState.LevelOne)
             {
                 level = 1;
             }
-            else if (gameState == GameState.Multiplayer)
+            else if (gameState == GameState.PlayerVsPlayerLevel)
             {
                 level = 2;
             }
+            else if (gameState == GameState.Exit)
+            {
+                level = -1;
+            }
+            //else if (gameState == GameState.Paused)
+            //{
+            //    level = -2;
+            //}
 
             return level;
         }
@@ -99,24 +111,21 @@ namespace WindowsGame1
                 spriteBatch.Draw(menuBackground, backgroundRectangle, Color.White);
                 spriteBatch.Draw(startButton, startButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
+                spriteBatch.Draw(playerVsPlayer, playerVsPlayerPosition, Color.White);
             }
 
             //draw the pause screen
             if (gameState == GameState.Paused)
             {
-                //spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
+                spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
             }
 
             //draw the the game when playing
-            if (gameState == GameState.Playing)
+            if (gameState == GameState.LevelOne)
             {
                 //pause
                 spriteBatch.Draw(pauseButton, pauseButtonPosition, Color.White);
-            }
-            if (gameState == GameState.Multiplayer)
-            {
-                spriteBatch.Draw(multiplayerButton, multiplayerButtonPosition, Color.White);
             }
         }
 
@@ -132,28 +141,29 @@ namespace WindowsGame1
                                              (int)startButtonPosition.Y, 100, 20);
                 Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X,
                                             (int)exitButtonPosition.Y, 100, 20);
-                Rectangle multiplayerButtonRect = new Rectangle((int)multiplayerButtonPosition.X, (int)multiplayerButtonPosition.Y, 137, 28);
+                Rectangle PvsPButtonRect = new Rectangle((int)playerVsPlayerPosition.X,
+                                            (int)playerVsPlayerPosition.Y, 100, 20);
 
                 if (mouseClickRect.Intersects(startButtonRect)) //player clicked start button
                 {
-                    gameState = GameState.Playing;
-                }
-                else if (mouseClickRect.Intersects(multiplayerButtonRect))
-                {
-                    gameState = GameState.Multiplayer;
+                    gameState = GameState.LevelOne;
                 }
                 else if (mouseClickRect.Intersects(exitButtonRect)) //player clicked exit button
                 {
                     gameState = GameState.Exit;
                 }
+                else if (mouseClickRect.Intersects(PvsPButtonRect))
+                {
+                    gameState = GameState.PlayerVsPlayerLevel;
+                }
             }
 
             //check the pausebutton
-            if (gameState == GameState.Playing)
+            if (gameState == GameState.LevelOne || gameState == GameState.PlayerVsPlayerLevel)
             {
                 Rectangle pauseButtonRect = new Rectangle(750, 0, 70, 70);
 
-                if (mouseClickRect.Intersects(pauseButtonRect))
+                if (keyboardState.IsKeyDown(Keys.P))
                 {
                     gameState = GameState.Paused;
                 }
@@ -168,7 +178,7 @@ namespace WindowsGame1
 
                 if (mouseClickRect.Intersects(resumeButtonRect))
                 {
-                    gameState = GameState.Playing;
+                    gameState = GameState.LevelOne;
                 }
                 if (mouseClickRect.Intersects(exitButtonRect))
                 {
