@@ -151,7 +151,7 @@ namespace WindowsGame1
                 //level (will extract in a method or class)
                 //Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
                 _level1 = new Level_1();
-                GenerateLevel(_level1.GetLevel());              
+                GenerateLevel(_level1.GetLevel());    
                 
                 //Load Bullets   
                 _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, -100, 15, 15)), "D", _bulletDirections) { Id = 1000, IsActive = false });
