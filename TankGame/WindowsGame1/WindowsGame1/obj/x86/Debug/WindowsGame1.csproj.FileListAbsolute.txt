@@ -35,3 +35,7 @@ C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\obj
 C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
 C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Backgrounds\BG1.xnb
+C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\GreenTank.xnb
+C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\OrangeTank.xnb
+C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\RedTank.xnb

@@ -29,3 +29,7 @@ Content\sprites\RedTank\Down.xnb
 Content\sprites\RedTank\Left.xnb
 Content\sprites\RedTank\Right.xnb
 Content\sprites\RedTank\Up.xnb
+Content\textures\Backgrounds\BG1.xnb
+Content\sprites\GreenTank\GreenTank.xnb
+Content\sprites\OrangeTank\OrangeTank.xnb
+Content\sprites\RedTank\RedTank.xnb

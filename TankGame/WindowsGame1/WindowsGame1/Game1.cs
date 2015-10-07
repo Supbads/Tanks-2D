@@ -26,6 +26,7 @@ namespace WindowsGame1
 
         public Game1()
         {
+            IsMouseVisible = true;
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferWidth = 1280;

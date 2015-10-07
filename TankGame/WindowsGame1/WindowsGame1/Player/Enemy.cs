@@ -1,20 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WindowsGame1
 {
     class Enemy : GameObject
     {
-        private int _id;
+        private List<GameObject> _gameObjects;
+        private FourFrameSprite _sprite;
+        private Vector2 _position;
+        private EnemyControl _control;
+        private Vector2 _prevPosition;
+        private string[] _directions = { "Right", "Left", "Down", "Up" };
+        float playerMoveSpeed;
 
-        //private FourFrameSprite _sprite;
-        private Sprite _sprite;
-
-        private bool _active;
+        private bool _isActive;
 
         private int _health;
 
@@ -30,64 +31,95 @@ namespace WindowsGame1
             }
         }
 
+        public override bool IsActive
+        {
+            get
+            {
+                return _isActive;
+            }
+            set
+            {
+                _isActive = value;
+            }
+        }
+
+        public int Width
+        {
+            get { return _sprite.FrameWidth; }
+        }
+        public int Height
+        {
+            get { return _sprite.FrameHeight; }
+        }
+        private int _currentFrame;
+
+        private int _id;
         public override int Id
         {
             get
             {
                 return _id;
             }
+
             set
             {
                 _id = value;
             }
         }
 
-        public override bool IsActive
-        {
-            get
-            {                
-                return _active;
-            }
-            set
-            {
-                _active = value;
-            }
-        }
-
-        public Enemy(Sprite sprite, int[,] levelMask)
+        public Enemy(FourFrameSprite sprite, Vector2 position, int currentFrame)
         {
             _sprite = sprite;
+            _position = position;
+            _prevPosition = position;
+            _currentFrame = currentFrame;
             _health = 100;
-            _active = true;
+
+            playerMoveSpeed = 3.0f;
+            _control = new EnemyControl(_position, Width, Height, _directions[currentFrame]);
         }
 
+
+        public void Initialize()
+        {
+
+        }
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
         {
-            if( _health <= 0 )
-            {
-                //_active = false;
-                //_sprite.X = -100;
-                //_sprite.Y = -100;
-            }
-                                          
-        }
+            _prevPosition = _position;
+            _position = _control.GetControl(playerMoveSpeed, _position, gameObjects);
+            _currentFrame = _control.GetFrame();
+            _sprite.Position = _position;
+            _sprite.Update(_currentFrame);
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            if ( _active )
+            if (Collision(gameObjects))
             {
-                _sprite.Draw(spriteBatch);
+                _position = _prevPosition;
+                _sprite.Position = _position;
             }
+        }
+        public override Rectangle GetRect()
+        {
+            return _sprite.GetRect();
         }
 
         public override bool Collision(List<GameObject> gameObjects)
         {
+            Rectangle intersect;
+            foreach (GameObject obj in gameObjects)
+            {
+                intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
+                //if ( intersect != Rectangle.Empty && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id && obj.Id < 7000)
+                {
+                    return true;
+                }
+            }
             return false;
         }
-
-        public override Rectangle GetRect()
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            return _sprite.GetRect();
+            _sprite.Draw(spriteBatch);
         }
 
         public override void Hit()

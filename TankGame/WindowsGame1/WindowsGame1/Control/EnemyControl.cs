@@ -11,29 +11,34 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Control_plam
+    class EnemyControl
     {
-        KeyboardState previousKbState;
-        KeyboardState currentKbState;
-        List<GameObject> _gameObjects;
         private Vector2 _position;
-        //Bullet bullet = new Bullet((new Sprite<Texture2D>"textures/Bullet",Rectangle(0,5,15,15)),/* direction*/);
         private int _frame;
         private int _width;
         private int _height;
         private string _bulletDirection;
+
+        private Random _random = new Random();
 
         private TimeSpan _timeSpan;
 
         private Stopwatch _stopWatch;
 
         public string BulletDirection { get; set; }
-        public Control_plam(Vector2 position, int width, int height)
+        public EnemyControl(Vector2 position, int width, int height, string direction)
         {
             _position = position;
-            _frame = 0;
-            previousKbState = new KeyboardState();
-            currentKbState = new KeyboardState();
+
+            if (direction == "Right")
+                _frame = 0;
+            else if (direction == "Left")
+                _frame = 1;
+            else if (direction == "Down")
+                _frame = 2;
+            else if (direction == "Up")
+                _frame = 3;
+
             _width = width;
             _height = height;
 
@@ -41,64 +46,62 @@ namespace WindowsGame1
             _stopWatch.Start();
         }
 
+        public void ChooseDirection()
+        {
+            _frame = _random.Next(0, 4);
+        }
+
         public Vector2 GetControl(float playerMoveSpeed, Vector2 position, List<GameObject> gameObjects)
         {
             _position = position;
-            previousKbState = currentKbState;
-            currentKbState = Keyboard.GetState();
-
-            
 
             Bullet bullet = new Bullet();
 
-            if (currentKbState.IsKeyDown(Keys.Right))
+            if (_frame == 0) //right
             {
                 _position.X += playerMoveSpeed;
-                _frame = 0;
                 _bulletDirection = "R";
             }
 
-            else if (currentKbState.IsKeyDown(Keys.Left))
+            else if (_frame == 1) //left
             {
                 _position.X -= playerMoveSpeed;
-                _frame = 1;
                 _bulletDirection = "L";
             }
 
-            else if (currentKbState.IsKeyDown(Keys.Up))
+            else if (_frame == 3) //up
             {
                 _position.Y -= playerMoveSpeed;
-                _frame = 3;
                 _bulletDirection = "U";
             }
 
-            else if (currentKbState.IsKeyDown(Keys.Down))
+            else if (_frame == 2) //down
             {
                 _position.Y += playerMoveSpeed;
-                _frame = 2;
                 _bulletDirection = "D";
             }
 
-            if (currentKbState.IsKeyDown(Keys.Space))
+            _timeSpan = _stopWatch.Elapsed;
+
+            //choose directin every few seconds
+            if (_timeSpan.TotalSeconds > 1 && _timeSpan.TotalSeconds < 7)
             {
-               
-                
-                _timeSpan = _stopWatch.Elapsed;
-                foreach ( GameObject obj in gameObjects )
+                ChooseDirection();
+            }
+
+            foreach (GameObject obj in gameObjects)
+            {
+                if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.7)
                 {
-                    if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.7)
-                    {
-                        bullet = (Bullet)obj;
-                        bullet.Shoot(_bulletDirection, _position);
-                        _stopWatch.Reset();
-                        _stopWatch.Start();  
-                        //Debug.WriteLine("SHOOOOOOOOTTTTTT");
-                        //Debug.WriteLine(_timeSpan.TotalSeconds);
-                        
-                        break;
-                    }
+                    bullet = (Bullet)obj;
+                    bullet.Shoot(_bulletDirection, _position);
+                    _stopWatch.Reset();
+                    _stopWatch.Start();
+
+                    break;
                 }
             }
+
             _position.X = (int)MathHelper.Clamp(_position.X, 0, Game1.screenWidth - _width);
             _position.Y = (int)MathHelper.Clamp(_position.Y, 0, Game1.screenHeight - _height);
 
@@ -109,6 +112,6 @@ namespace WindowsGame1
         {
             return _frame;
         }
-               
+
     }
 }

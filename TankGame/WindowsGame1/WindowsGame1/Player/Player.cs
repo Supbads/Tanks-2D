@@ -1,129 +1,129 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Player
+    class Player : GameObject
     {
-        GraphicsDeviceManager _graphics;
-
-        //public Texture2D PlayerTexture;
-
-        public Texture2D tank;
-        public Texture2D[] tankPositions;
-
-        public Rectangle position;
-
-        public bool active;
-
-        public int health;
-
-        KeyboardState previousKbState;
-        KeyboardState currentKbState;
-
+        private List<GameObject> _gameObjects;
+        private FourFrameSprite _sprite;
+        private Vector2 _position;
+        private Control_plam _control;
+        private Vector2 _prevPosition;
         float playerMoveSpeed;
+
+        private bool _isActive;
+
+        private int _health;
+        
+        public override int Health
+        {
+            get
+            {
+                return _health;
+            }
+            set
+            {
+                _health = value;
+            }
+        }
+
+        public override bool IsActive
+        {
+            get
+            {
+                return _isActive;
+            }
+            set
+            {
+                _isActive = value;
+            }
+        }
 
         public int Width
         {
-            //get { return PlayerTexture.Width; }
-            get { return tank.Width; }
+            get { return _sprite.FrameWidth; }
         }
-
         public int Height
         {
-            //get { return PlayerTexture.Height; }
-            get { return tank.Height; }
+            get { return _sprite.FrameHeight; }
         }
+        private int _currentFrame;
 
-        public Player(GraphicsDeviceManager graphics, Texture2D[] tankPositions, Rectangle position)
+        private int _id;
+        public override int Id
         {
-            _graphics = graphics;
-            this.tank = tankPositions[0];
-            this.position = position;
-            this.tankPositions = tankPositions;
-
-            active = true;
-
-            health = 100;
-            playerMoveSpeed = 3.0f;
-
-            currentKbState = new KeyboardState();
-            previousKbState = new KeyboardState();
-        }
-
-        public Player()
-        {
-            // TODO: Complete member initialization
-        }
-        public void setPlayerTank(Texture2D tank)
-        {
-            this.tank = tank;
-        }
-
-        public void Initialize(Texture2D tank, Rectangle position)
-        {
-            this.tank = tank;
-            this.position = position;
-
-            active = true;
-
-            health = 100;
-            playerMoveSpeed = 3.0f;
-
-            currentKbState = new KeyboardState();
-            previousKbState = new KeyboardState();
-        }
-
-        public void Update(GameTime gameTime)
-        {
-            //animation.position = position;
-            //animation.Update(gameTime);
-            PlayerControl();
-
-            position.X = (int)MathHelper.Clamp(position.X, 0, Game1.screenWidth - Width);
-            position.Y = (int)MathHelper.Clamp(position.Y, 0, Game1.screenHeight - Height);
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            //spriteBatch.Draw(PlayerTexture, position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-            spriteBatch.Draw(tank, position, Color.White);
-        }
-
-        public void PlayerControl()
-        {
-            previousKbState = currentKbState;
-            currentKbState = Keyboard.GetState();
-            if (currentKbState.IsKeyDown(Keys.Left))
+            get
             {
-                position.X -= (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[2]);
-            }
-            else if (currentKbState.IsKeyDown(Keys.Right))
-            {
-                position.X += (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[3]);
-            }
-            else if (currentKbState.IsKeyDown(Keys.Up))
-            {
-                position.Y -= (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[0]);
+                return _id;
             }
 
-            else if (currentKbState.IsKeyDown(Keys.Down))
+            set
             {
-                position.Y += (int)playerMoveSpeed;
-                setPlayerTank(tankPositions[1]);
+                _id = value;
             }
+        }
+
+        public Player(FourFrameSprite sprite, Vector2 position, int currentFrame)
+        {
+            _sprite = sprite;
+            _position = position;
+            _prevPosition = position;
+            _currentFrame = currentFrame;
+            _health = 100;
+
+            playerMoveSpeed = 4.0f;
+            _control = new Control_plam(_position, Width, Height);
+        }
+
+
+        public void Initialize()
+        {
+
+        }
+        public override void Update(GameTime gameTime, List<GameObject> gameObjects)
+        {
+            _prevPosition = _position;
+            _position = _control.GetControl(playerMoveSpeed, _position, gameObjects);
+            _currentFrame = _control.GetFrame();
+            _sprite.Position = _position;
+            _sprite.Update(_currentFrame);
+
+            if (Collision(gameObjects))
+            {
+                _position = _prevPosition;
+                _sprite.Position = _position;
+            }
+        }
+        public override Rectangle GetRect()
+        {
+            return _sprite.GetRect();
+        }
+
+        public override bool Collision(List<GameObject> gameObjects)
+        {
+            Rectangle intersect;
+            foreach (GameObject obj in gameObjects)
+            {
+                intersect = Rectangle.Intersect(_sprite.GetRect(), obj.GetRect());
+                //if ( intersect != Rectangle.Empty && _id != obj.Id)
+                if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id && obj.Id <7000)//if obj.Id < 7000 -> font
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            _sprite.Draw(spriteBatch);
+        }
+
+        public override void Hit()
+        {
+            _health -= 50;
         }
     }
 }

@@ -72,13 +72,13 @@ namespace WindowsGame1
             _direction = direction;
             _textures = bulletTextures;
 
-            health = 100;                                   
+            health = 40;                                   
 
         }
 
         public Bullet()
         {
-            health = 100;
+            health = 40;
         }
 
         public override void Update(GameTime gameTime, List<GameObject> gameObjects)
@@ -141,6 +141,7 @@ namespace WindowsGame1
                     _sprite.X = -100;
                     _sprite.Y = -100;
                     obj.Hit();
+                    Hit();
                     return true;
                 }
             }
@@ -181,6 +182,8 @@ namespace WindowsGame1
 
         public override void Hit()
         {
+            _sprite.X = -200;
+            _sprite.Y = -200;
         }
     }
 }

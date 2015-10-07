@@ -9,8 +9,8 @@ namespace WindowsGame1
     {
         Texture2D spriteStrip;
         Color color;
-        Rectangle sourceRect = new Rectangle();
-        private Rectangle _destinationRect = new Rectangle();
+        Rectangle sourceRect;
+        private Rectangle _destinationRect;
 
         public int FrameWidth;
         public int FrameHeight;
@@ -32,6 +32,8 @@ namespace WindowsGame1
         public FourFrameSprite(Texture2D texture, int frameWidth,
             int frameHeight, Color color)
         {
+            sourceRect = new Rectangle();
+            _destinationRect = new Rectangle();
             this.color = color;
             this.FrameWidth = frameWidth;
             this.FrameHeight = frameHeight;
