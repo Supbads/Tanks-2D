@@ -49,6 +49,7 @@ namespace WindowsGame1
         public void ChooseDirection()
         {
             _frame = _random.Next(0, 4);
+
         }
 
         public Vector2 GetControl(float playerMoveSpeed, Vector2 position, List<GameObject> gameObjects)
@@ -87,6 +88,8 @@ namespace WindowsGame1
             if (_timeSpan.TotalSeconds > 1 && _timeSpan.TotalSeconds < 7)
             {
                 ChooseDirection();
+                _stopWatch.Reset();
+                _stopWatch.Start();
             }
 
             foreach (GameObject obj in gameObjects)
@@ -94,9 +97,7 @@ namespace WindowsGame1
                 if (obj.Id >= 1000 && obj.Id < 2000 && obj.IsActive == false && _timeSpan.TotalSeconds > 0.7)
                 {
                     bullet = (Bullet)obj;
-                    bullet.Shoot(_bulletDirection, _position);
-                    _stopWatch.Reset();
-                    _stopWatch.Start();
+                    bullet.Shoot(_bulletDirection, _position);                    
 
                     break;
                 }
