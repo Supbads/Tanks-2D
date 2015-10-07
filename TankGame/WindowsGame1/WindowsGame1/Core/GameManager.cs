@@ -104,7 +104,7 @@ namespace WindowsGame1
             {
                 if (menu.Update())
                 {
-                    _currentLevel=2;
+                    _currentLevel=1;
                     LoadContent();
                 }
             }
@@ -146,7 +146,7 @@ namespace WindowsGame1
                 //player tank
                 Texture2D tank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
                 FourFrameSprite playerSprite = new FourFrameSprite(tank, 40, 40, Color.White);
-                _gameObjects.Add(new Player_2(playerSprite, new Vector2(620,700 ), 3) { Id = 1 });
+                _gameObjects.Add(new Player(playerSprite, new Vector2(620,700 ), 3) { Id = 1 });
 
                 //level (will extract in a method or class)
                 //Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
@@ -182,6 +182,7 @@ namespace WindowsGame1
 
                 //Load Bullets   
                 LoadBullets();
+
 
 
             }
