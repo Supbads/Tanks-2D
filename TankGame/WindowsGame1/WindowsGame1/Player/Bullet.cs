@@ -138,8 +138,6 @@ namespace WindowsGame1
                 if (_sprite.GetRect().Intersects(obj.GetRect()) && _id != obj.Id && obj.Id < 7000)//obv.Id < 7000 -> Font
                 {
                     _isActive = false;
-                    _sprite.X = -100;
-                    _sprite.Y = -100;
                     obj.Hit();
                     Hit();
                     return true;

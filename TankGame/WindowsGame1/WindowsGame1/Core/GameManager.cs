@@ -17,6 +17,8 @@ namespace WindowsGame1
     {
         private int _enemyCount;
         private int _maxEnemy;
+        private int _enemiesKilled;
+        private int _maxEnemiesKilled;
         private int _currentLevel;
 
         private Vector2[] _spawnPoints;
@@ -57,6 +59,8 @@ namespace WindowsGame1
             _currentLevel = 0;
             _enemyCount = 1;
             _maxEnemy = 3;
+            _maxEnemiesKilled = 7;
+            _enemiesKilled = 0;
 
             _enemyTrackingList = new List<int>();
         }
@@ -100,11 +104,18 @@ namespace WindowsGame1
                 {
                     if (_gameObjects[i].Health <= 0)
                     {
+                        if (_gameObjects[i].Id > 2000 && _gameObjects[i].Id < 2010)
+                        {
+                            _enemyCount--;
+                            _enemyTrackingList.RemoveAt(_enemyTrackingList.Count - 1);
+                            _enemiesKilled++;
+                        }
+                        
                         _gameObjects.RemoveAt(i--);
                     }
                 }
             }
-            else if (_currentLevel == 0)
+            if (_currentLevel == 0)
             {
                 getLevel = menu.Update();
 
@@ -189,10 +200,8 @@ namespace WindowsGame1
 
                 //Load Bullets   
                 LoadBullets();
-
-
-
             }
+            
 
         }
 
@@ -241,7 +250,7 @@ namespace WindowsGame1
                 int tmpDirection = randomDir.Next(0, 4);
                 int enemyIdCount = 2001;
 
-                if (_enemyCount <= _maxEnemy && !_enemyTrackingList.Contains(tmpRandom))
+                if (_enemyCount <= _maxEnemy && !_enemyTrackingList.Contains(tmpRandom) && _enemiesKilled <= _maxEnemiesKilled)
                 {
                     _enemyTrackingList.Add(tmpRandom);
                     tempSprite = new FourFrameSprite(_enemyTexture[tmpTexture], 40, 40, Color.White);
