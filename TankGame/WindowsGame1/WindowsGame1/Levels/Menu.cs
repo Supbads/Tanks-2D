@@ -10,6 +10,8 @@ namespace WindowsGame1
 
         private Texture2D exitButton;
 
+        private Texture2D multiplayerButton;
+
         private Texture2D pauseButton;
 
         private Texture2D resumeButton;
@@ -20,11 +22,13 @@ namespace WindowsGame1
 
         private Vector2 startButtonPosition = new Vector2(1000, 400);
 
-        private Vector2 exitButtonPosition = new Vector2(1000, 450);
+        private Vector2 exitButtonPosition = new Vector2(1000, 500);
 
         private Vector2 resumeButtonPosition = new Vector2(400, 300);
 
         private Vector2 pauseButtonPosition = new Vector2(750, 0);
+
+        private Vector2 multiplayerButtonPosition = new Vector2(1000, 450);
 
         MouseState mouseState = Mouse.GetState();
 
@@ -40,7 +44,8 @@ namespace WindowsGame1
             StartMenu,
             Playing,
             Paused,
-            Exit
+            Exit,
+            Multiplayer
         }
 
 
@@ -51,6 +56,7 @@ namespace WindowsGame1
             this.pauseButton = buttonTextures[2];
             this.resumeButton = buttonTextures[3];
             this.menuBackground = buttonTextures[4];
+            this.multiplayerButton = buttonTextures[5];
 
             this.windowWidht = windowWidth;
             this.windowHeight = windowHeight;
@@ -59,7 +65,7 @@ namespace WindowsGame1
             previousMouseState = mouseState;
         }
 
-        public bool Update()
+        public int Update()
         {
             //wait for mouseclick
             mouseState = Mouse.GetState();
@@ -72,13 +78,17 @@ namespace WindowsGame1
 
             previousMouseState = mouseState;
 
-            bool start = false;
+            int level = 0;
             if (gameState == GameState.Playing)
             {
-                start = true;
+                level = 1;
+            }
+            else if (gameState == GameState.Multiplayer)
+            {
+                level = 2;
             }
 
-            return start;
+            return level;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -94,7 +104,7 @@ namespace WindowsGame1
             //draw the pause screen
             if (gameState == GameState.Paused)
             {
-                spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
+                //spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
             }
 
@@ -103,6 +113,10 @@ namespace WindowsGame1
             {
                 //pause
                 spriteBatch.Draw(pauseButton, pauseButtonPosition, Color.White);
+            }
+            if (gameState == GameState.Multiplayer)
+            {
+                spriteBatch.Draw(multiplayerButton, multiplayerButtonPosition, Color.White);
             }
         }
 
@@ -118,10 +132,15 @@ namespace WindowsGame1
                                              (int)startButtonPosition.Y, 100, 20);
                 Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X,
                                             (int)exitButtonPosition.Y, 100, 20);
+                Rectangle multiplayerButtonRect = new Rectangle((int)multiplayerButtonPosition.X, (int)multiplayerButtonPosition.Y, 137, 28);
 
                 if (mouseClickRect.Intersects(startButtonRect)) //player clicked start button
                 {
                     gameState = GameState.Playing;
+                }
+                else if (mouseClickRect.Intersects(multiplayerButtonRect))
+                {
+                    gameState = GameState.Multiplayer;
                 }
                 else if (mouseClickRect.Intersects(exitButtonRect)) //player clicked exit button
                 {

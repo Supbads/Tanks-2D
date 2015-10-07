@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\animations\shipAnimation.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\GreenTank\Down.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Down.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\GreenTank\Left.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Left.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\GreenTank\Right.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Right.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\GreenTank\Up.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\Up.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bricks\120px-Brick_Block.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\120px-Brick_Block.xnb</Output>
-      <Time>2015-10-05T16:34:28.3562106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3059409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\480px-Brick_Block_-_New_Super_Mario_Bros.xnb</Output>
-      <Time>2015-10-05T16:34:28.3562106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3059409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bricks\Brick_Block.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bricks\Brick_Block.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\BlueTank\BlueTank.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\BlueTank.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\tankBase_0.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\tankBase_0.xnb</Output>
-      <Time>2015-10-05T16:34:28.3562106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Buttons\exit.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\exit.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Buttons\Menu.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\Menu.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Buttons\pause.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\pause.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Buttons\resume.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\resume.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Buttons\start.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\start.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bullet\Down.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Down.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bullet\Left.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Left.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bullet\Right.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Right.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Bullet\Up.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Bullet\Up.xnb</Output>
-      <Time>2015-10-05T16:34:28.3662106+03:00</Time>
+      <Time>2015-10-07T19:14:56.3159409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\BlueTank\Down.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Down.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\BlueTank\Left.png</Source>
@@ -188,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Left.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\BlueTank\Right.png</Source>
@@ -197,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Right.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\BlueTank\Up.png</Source>
@@ -206,7 +206,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\BlueTank\Up.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\OrangeTank\Down.png</Source>
@@ -215,7 +215,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Down.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\OrangeTank\Left.png</Source>
@@ -224,7 +224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Left.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\OrangeTank\Right.png</Source>
@@ -233,7 +233,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Right.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\OrangeTank\Up.png</Source>
@@ -242,7 +242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\Up.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\RedTank\Down.png</Source>
@@ -251,7 +251,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Down.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\RedTank\Left.png</Source>
@@ -260,7 +260,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Left.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\RedTank\Right.png</Source>
@@ -269,7 +269,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Right.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\RedTank\Up.png</Source>
@@ -278,7 +278,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\Up.xnb</Output>
-      <Time>2015-10-05T16:34:28.3462106+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>textures\Backgrounds\BG1.jpg</Source>
@@ -287,7 +287,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Backgrounds\BG1.xnb</Output>
-      <Time>2015-10-06T22:46:54.0313514+03:00</Time>
+      <Time>2015-10-07T19:14:56.3059409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\GreenTank\GreenTank.png</Source>
@@ -296,7 +296,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\GreenTank\GreenTank.xnb</Output>
-      <Time>2015-10-07T00:27:58.5142199+03:00</Time>
+      <Time>2015-10-07T19:14:56.2859408+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\OrangeTank\OrangeTank.png</Source>
@@ -305,7 +305,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\OrangeTank\OrangeTank.xnb</Output>
-      <Time>2015-10-07T00:28:16.8992715+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
     </Item>
     <Item>
       <Source>sprites\RedTank\RedTank.png</Source>
@@ -314,7 +314,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sprites\RedTank\RedTank.xnb</Output>
-      <Time>2015-10-07T00:28:16.8042661+03:00</Time>
+      <Time>2015-10-07T19:14:56.2959409+03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\Buttons\multiplayerButton.png</Source>
+      <Name>textures\Buttons\multiplayerButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\multiplayerButton.xnb</Output>
+      <Time>2015-10-07T19:25:13.0502175+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

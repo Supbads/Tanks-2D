@@ -80,3 +80,4 @@ D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame
 D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
 D:\school\Universitet\Domashni\Advanced C# teamwork\repo\Tanks-2D\trunk\TankGame\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+C:\Users\Victor\Documents\GitHub\Tanks-2D\TankGame\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\textures\Buttons\multiplayerButton.xnb

@@ -41,7 +41,7 @@ namespace WindowsGame1
 
         int[,] _levelMask;
 
-        Texture2D[] buttonsTextures = new Texture2D[5];
+        Texture2D[] buttonsTextures = new Texture2D[6];
 
         Menu menu;
 
@@ -102,9 +102,14 @@ namespace WindowsGame1
             }
             else if (_currentLevel == 0)
             {
-                if (menu.Update())
+                if (menu.Update() == 1)
                 {
                     _currentLevel=1;
+                    LoadContent();
+                }
+                else if (menu.Update() == 2)
+                {
+                    _currentLevel = 2;
                     LoadContent();
                 }
             }
@@ -112,12 +117,12 @@ namespace WindowsGame1
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (_currentLevel == 0)
-            {
-                menu.Draw(spriteBatch);
-                return;
-            }
-            
+            //if (_currentLevel == 0)
+            //{
+            //    menu.Draw(spriteBatch);
+            //    return;
+            //}
+            menu.Draw(spriteBatch);
             foreach (GameObject obj in _gameObjects)
             {
                 obj.Draw(spriteBatch);
@@ -133,6 +138,7 @@ namespace WindowsGame1
                 buttonsTextures[2] = _content.Load<Texture2D>("textures/Buttons/pause");
                 buttonsTextures[3] = _content.Load<Texture2D>("textures/Buttons/resume");
                 buttonsTextures[4] = _content.Load<Texture2D>("textures/Buttons/Menu");
+                buttonsTextures[5] = _content.Load<Texture2D>("textures/Buttons/multiplayerButton");
 
                 menu = new Menu(buttonsTextures, 1280, 720);
             }
