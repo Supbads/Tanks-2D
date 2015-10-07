@@ -83,7 +83,7 @@ namespace WindowsGame1
 
         public void Update()
         {
-            if (_currentLevel == 1)
+            if (_currentLevel >=1)
             {
                 GenerateEnemy();
 
@@ -104,7 +104,7 @@ namespace WindowsGame1
             {
                 if (menu.Update())
                 {
-                    _currentLevel++;
+                    _currentLevel=2;
                     LoadContent();
                 }
             }
@@ -146,7 +146,7 @@ namespace WindowsGame1
                 //player tank
                 Texture2D tank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
                 FourFrameSprite playerSprite = new FourFrameSprite(tank, 40, 40, Color.White);
-                _gameObjects.Add(new Player(playerSprite, new Vector2(620,700 ), 3) { Id = 1 });
+                _gameObjects.Add(new Player_2(playerSprite, new Vector2(620,700 ), 3) { Id = 1 });
 
                 //level (will extract in a method or class)
                 //Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
@@ -154,31 +154,57 @@ namespace WindowsGame1
                 GenerateLevel(_level1.GetLevel());    
                 
                 //Load Bullets   
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, -100, 15, 15)), "D", _bulletDirections) { Id = 1000, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-200, -200, 15, 15)), "U", _bulletDirections) { Id = 1001, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-300, -300, 15, 15)), "L", _bulletDirections) { Id = 1002, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-400, -400, 15, 15)), "L", _bulletDirections) { Id = 1003, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-500, -500, 15, 15)), "D", _bulletDirections) { Id = 1004, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-600, -600, 15, 15)), "D", _bulletDirections) { Id = 1005, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1006, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1007, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1008, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1009, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1010, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1011, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1012, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1013, IsActive = false });
-                _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1014, IsActive = false });
+                LoadBullets();
 
 
 
             }
-            else if (_currentLevel == 2) // level 2
+            else if (_currentLevel == 2) // Player vs Player (local)
             {
+                //background
+                Sprite levelBackground = new Sprite(_backgroundTexture, new Rectangle(0, 0, _backgroundTexture.Width, _backgroundTexture.Height)) { Id = 8000, IsActive = true }; // this way it collides but loads the bg
+                _gameObjects.Add(levelBackground);
+
+
+                //player tank
+                Texture2D tank = _content.Load<Texture2D>("sprites/BlueTank/BlueTank");
+                FourFrameSprite playerSprite = new FourFrameSprite(tank, 40, 40, Color.White);
+                _gameObjects.Add(new Player(playerSprite, new Vector2(620, 700), 2) { Id = 1 });
+
+                //player2 tank
+                Texture2D tank2 = _content.Load<Texture2D>("sprites/GreenTank/GreenTank");
+                FourFrameSprite player2Sprite = new FourFrameSprite(tank2, 40, 40, Color.White);
+                _gameObjects.Add(new Player_2(player2Sprite, new Vector2(620, 0), 3) { Id = 2 });
+                //level (will extract in a method or class)
+                //Texture2D tuhla_v2 = _content.Load<Texture2D>("textures/Bricks/480px-Brick_Block_-_New_Super_Mario_Bros");
+                _level1 = new Level_1();
+                GenerateLevel(_level1.GetLevel());
+
+                //Load Bullets   
+                LoadBullets();
 
 
             }
 
+        }
+
+        private void LoadBullets()
+        {
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-100, -100, 15, 15)), "D", _bulletDirections) { Id = 1000, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-200, -200, 15, 15)), "U", _bulletDirections) { Id = 1001, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-300, -300, 15, 15)), "L", _bulletDirections) { Id = 1002, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-400, -400, 15, 15)), "L", _bulletDirections) { Id = 1003, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-500, -500, 15, 15)), "D", _bulletDirections) { Id = 1004, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-600, -600, 15, 15)), "D", _bulletDirections) { Id = 1005, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1006, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1007, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1008, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1009, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1010, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1011, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1012, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1013, IsActive = false });
+            _gameObjects.Add(new Bullet(new Sprite(_bullet, new Rectangle(-700, -700, 15, 15)), "D", _bulletDirections) { Id = 1014, IsActive = false });
         }
 
         //private void LoadLevel() //for random level generation
@@ -194,25 +220,28 @@ namespace WindowsGame1
 
         private void GenerateEnemy()
         {
-            Random randomSP = new Random(); // Random SpawnPoint
-            Random randomTT = new Random(); // random TankTextures
-            Random randomDir = new Random();
-            
-            FourFrameSprite tempSprite = null;
-
-            int tmpRandom = randomSP.Next(0, _spawnPoints.Length);
-            int tmpTexture = randomTT.Next(0, _enemyTexture.Length);
-            int tmpDirection = randomDir.Next(0, 4);
-            int enemyIdCount = 2001;
-
-            if (_enemyCount <= _maxEnemy && !_enemyTrackingList.Contains(tmpRandom))
+            if(_currentLevel==1)
             {
-                _enemyTrackingList.Add(tmpRandom);
-                tempSprite = new FourFrameSprite(_enemyTexture[tmpTexture], 40, 40, Color.White);
-                Vector2 tempVector = new Vector2((int)_spawnPoints[tmpRandom].X, (int)_spawnPoints[tmpRandom].Y);
+                Random randomSP = new Random(); // Random SpawnPoint
+                Random randomTT = new Random(); // random TankTextures
+                Random randomDir = new Random();
 
-                _gameObjects.Add(new Enemy(tempSprite, tempVector, tmpDirection) { Id = enemyIdCount++ });
-                _enemyCount++;
+                FourFrameSprite tempSprite = null;
+
+                int tmpRandom = randomSP.Next(0, _spawnPoints.Length);
+                int tmpTexture = randomTT.Next(0, _enemyTexture.Length);
+                int tmpDirection = randomDir.Next(0, 4);
+                int enemyIdCount = 2001;
+
+                if (_enemyCount <= _maxEnemy && !_enemyTrackingList.Contains(tmpRandom))
+                {
+                    _enemyTrackingList.Add(tmpRandom);
+                    tempSprite = new FourFrameSprite(_enemyTexture[tmpTexture], 40, 40, Color.White);
+                    Vector2 tempVector = new Vector2((int)_spawnPoints[tmpRandom].X, (int)_spawnPoints[tmpRandom].Y);
+
+                    _gameObjects.Add(new Enemy(tempSprite, tempVector, tmpDirection) { Id = enemyIdCount++ });
+                    _enemyCount++;
+            }         
 
             }
         }
